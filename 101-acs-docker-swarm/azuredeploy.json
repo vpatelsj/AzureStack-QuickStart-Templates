@@ -391,6 +391,20 @@
         "description": "The azure deploy environment. Currently support: AzureCloud, AzureChinaCloud"
       },
       "type": "string"
+    },
+    "osImageSku": {
+      "type": "string",
+      "defaultValue": "14.04.4-LTS",
+      "metadata": {
+        "description": "Maps to the sku in the Azure Stack Platform Image Repository."
+      }
+    },
+    "osImageVersion": {
+      "type": "string",
+      "defaultValue": "14.04.201607140",
+      "metadata": {
+        "description": "Maps to the sku in the Azure Stack Platform Image Repository."
+      }
     }
   },
   "variables": {
@@ -486,8 +500,8 @@
     "orchestratorName": "swarm",
     "osImageOffer": "UbuntuServer",
     "osImagePublisher": "Canonical",
-    "osImageSKU": "14.04.4-LTS",
-    "osImageVersion": "14.04.201607140",
+    "osImageSKU": "[parameters('osImageSku')]",
+    "osImageVersion": "[parameters('osImageVersion')]",
     "postInstallScriptURI": "disabled",
     "sshKeyPath": "[concat('/home/', variables('adminUsername'), '/.ssh/authorized_keys')]",
     "sshRSAPublicKey": "[parameters('sshRSAPublicKey')]",
