@@ -594,6 +594,20 @@
         "description": "The azure deploy environment. Currently support: AzureCloud, AzureChinaCloud"
       },
       "type": "string"
+    },
+    "osImageSku": {
+      "type": "string",
+      "defaultValue": "16.04-LTS",
+      "metadata": {
+        "description": "Maps to the sku in the Azure Stack Platform Image Repository."
+      }
+    },
+    "osImageVersion": {
+      "type": "string",
+      "defaultValue": "16.04.201703070",
+      "metadata": {
+        "description": "Maps to the sku in the Azure Stack Platform Image Repository."
+      }
     }
   },
   "variables": {
@@ -708,8 +722,8 @@
     "orchestratorName": "dcos",
     "osImageOffer": "UbuntuServer",
     "osImagePublisher": "Canonical",
-    "osImageSKU": "16.04-LTS",
-    "osImageVersion": "16.04.201703070",
+    "osImageSKU": "[parameters('osImageSku')]",
+    "osImageVersion": "[parameters('osImageVersion')]",
     "sshKeyPath": "[concat('/home/', variables('adminUsername'), '/.ssh/authorized_keys')]",
     "sshRSAPublicKey": "[parameters('sshRSAPublicKey')]",
     "storageAccountBaseName": "[uniqueString(concat(variables('masterEndpointDNSNamePrefix'),variables('location'),variables('orchestratorName')))]",
@@ -1767,7 +1781,8 @@
           "commandToExecute": "sh -c 'until ping -c1 leader.mesos;do echo waiting for leader.mesos;sleep 15;done;echo leader.mesos up'"
         },
         "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.4"
+        "typeHandlerVersion": "1.4",
+        "autoUpgradeMinorVersion": true
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     }
