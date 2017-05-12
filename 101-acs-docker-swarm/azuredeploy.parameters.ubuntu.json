@@ -2,6 +2,9 @@
   "agentpublicCount": {
     "value": 3
   },
+  "agentpublicEndpointDNSNamePrefix": {
+    "value": "rg-sa-20170511"
+  },
   "agentpublicSubnet": {
     "value": "10.0.0.0/16"
   },
@@ -16,6 +19,9 @@
   },
   "location": {
     "value": ""
+  },
+  "masterEndpointDNSNamePrefix": {
+    "value": "rg-sm-20170511"
   },
   "masterSubnet": {
     "value": "172.16.0.0/24"
