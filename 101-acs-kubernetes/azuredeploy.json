@@ -1261,7 +1261,7 @@
         "publisher": "Microsoft.Azure.Extensions",
         "settings": {},
         "type": "CustomScript",
-        "typeHandlerVersion": "2.0"
+        "typeHandlerVersion": "1.8"
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     },
@@ -1650,7 +1650,7 @@
         "publisher": "Microsoft.Azure.Extensions",
         "settings": {},
         "type": "CustomScript",
-        "typeHandlerVersion": "2.0"
+        "typeHandlerVersion": "1.8"
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     }
