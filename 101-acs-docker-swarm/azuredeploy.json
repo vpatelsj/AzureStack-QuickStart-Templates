@@ -380,14 +380,14 @@
     },
     "osImageSku": {
       "type": "string",
-      "defaultValue": "14.04.4-LTS",
+      "defaultValue": "14.04-LTS",
       "metadata": {
         "description": "Maps to the sku in the Azure Stack Platform Image Repository."
       }
     },
     "osImageVersion": {
       "type": "string",
-      "defaultValue": "14.04.201607140",
+      "defaultValue": "latest",
       "metadata": {
         "description": "Maps to the sku in the Azure Stack Platform Image Repository."
       }
