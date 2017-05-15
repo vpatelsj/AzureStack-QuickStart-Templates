@@ -32,9 +32,6 @@
     "linuxAdminUsername": {
       "value": "azureuser"
     },
-    "location": {
-      "value": ""
-    },
     "masterEndpointDNSNamePrefix": {
       "value": "rg-dcosm-20170511"
     },
