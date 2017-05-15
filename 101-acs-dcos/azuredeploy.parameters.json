@@ -43,9 +43,6 @@
     },
     "sshRSAPublicKey": {
       "value": "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAy2cUY4vB0hO9H5FxzAJqf36noBAkx+ga7Klesvm9IAkUxWwRMok/l/Ot02X6OhHVqUiF4S9a+rZ8pvSmTgaw/ZeASshRFaebN9hIBuduiXgl6A6W6quLy73ei4UItsPTRq4GPiV7+Tc53i5YmlQz6GAn4Uc9waP8LYjvG3qixAhNFyr0zGA5wNCyjWBuUti9HtmxB7WoRPHStAKYEmM7g7RdeZQi"
-    },
-    "targetEnvironment": {
-      "value": "AzurePublicCloud"
     }
   }
 }

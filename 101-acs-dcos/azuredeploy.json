@@ -581,13 +581,6 @@
       },
       "type": "string"
     },
-    "targetEnvironment": {
-      "defaultValue": "AzureCloud",
-      "metadata": {
-        "description": "The azure deploy environment. Currently support: AzureCloud, AzureChinaCloud"
-      },
-      "type": "string"
-    },
     "osImageSku": {
       "type": "string",
       "defaultValue": "16.04-LTS",
@@ -756,7 +749,6 @@
     ],
     "storageAccountPrefixesCount": "[length(variables('storageAccountPrefixes'))]",
     "storageAccountType": "Standard_LRS",
-    "targetEnvironment": "[parameters('targetEnvironment')]",
     "virtualNetworkName": "[concat(variables('orchestratorName'), '-vnet-', variables('nameSuffix'))]",
     "vmSizesMap": {
       "Standard_A10": {
