@@ -828,7 +828,8 @@
       }
     },
     "vmsPerStorageAccount": 20,
-    "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]"
+    "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
+    "networkSecurityGroupName": "[tolower(concat('nsg',uniquestring(resourceGroup().id)))]"
   },
   "resources": [
     {
@@ -846,6 +847,30 @@
         "accountType": "[variables('vmSizesMap')[variables('agentpublicVMSize')].storageAccountType]"
       },
       "type": "Microsoft.Storage/storageAccounts"
+    },
+    {
+      "apiVersion": "[variables('apiVersionStorage')]",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroupName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "ssh",
+            "properties": {
+              "description": "Allow RDP",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 200,
+              "direction": "Inbound"
+            }
+          }
+        ]
+      }
     },
     {
       "apiVersion": "[variables('apiVersionDefault')]",
@@ -1204,11 +1229,15 @@
         "[variables('vnetID')]",
         "[variables('masterLbID')]",
         "[concat(variables('masterSshPort22InboundNatRuleIdPrefix'),'0')]",
-        "[concat(variables('masterSshInboundNatRuleIdPrefix'),copyIndex())]"
+        "[concat(variables('masterSshInboundNatRuleIdPrefix'),copyIndex())]",
+        "[variables('networkSecurityGroupName')]"
       ],
       "location": "[variables('location')]",
       "name": "[concat(variables('masterVMNamePrefix'), 'nic-', copyIndex())]",
       "properties": {
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
+        },
         "ipConfigurations": [
           {
             "name": "ipConfigNode",
