@@ -568,13 +568,6 @@
       },
       "type": "string"
     },
-    "nameSuffix": {
-      "defaultValue": "30792672",
-      "metadata": {
-        "description": "A string hash of the master DNS name to uniquely identify the cluster."
-      },
-      "type": "string"
-    },
     "sshRSAPublicKey": {
       "metadata": {
         "description": "SSH public key used for auth to all Linux machines.  Not Required.  If not set, you must provide a password key."
@@ -699,7 +692,7 @@
     "maxStorageAccountsPerAgent": "[div(variables('maxVMsPerPool'),variables('maxVMsPerStorageAccount'))]",
     "maxVMsPerPool": 100,
     "maxVMsPerStorageAccount": 20,
-    "nameSuffix": "[parameters('nameSuffix')]",
+    "nameSuffix": "[uniqueString(resourceGroup().id)]",
     "oauthEnabled": "false",
     "orchestratorName": "dcos",
     "osImageOffer": "UbuntuServer",
