@@ -1304,9 +1304,7 @@
         "autoUpgradeMinorVersion": true,
         "publisher": "Microsoft.OSTCExtensions",
         "settings": {
-          "commandToExecute": "sudo echo net.ipv4.tcp_mtu_probing=1 >> /etc/sysctl.d/10-tcp_mtu_probing.conf",
-          "commandToExecute": "sudo echo net.ipv4.tcp_base_mss=1024 >> /etc/sysctl.d/10-tcp_mtu_probing.conf",
-          "commandToExecute": "sudo sysctl --system",
+          "commandToExecute": "sed -i '1s/^/sudo ifconfig eth0 mtu 1500\n/' /etc/rc.local",
           "commandToExecute": "[variables('masterCustomScript')]",
           "fileUris": [ ]
         },
