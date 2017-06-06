@@ -464,6 +464,7 @@
       "type": "string"
     },
     "linuxAdminUsername": {
+      "defaultValue": "azureuser",
       "metadata": {
         "description": "User name for the Linux Virtual Machines (SSH or Password)."
       },

@@ -471,6 +471,7 @@
       "type": "string"
     },
     "linuxAdminUsername": {
+      "defaultValue": "azureuser",
       "metadata": {
         "description": "User name for the Linux Virtual Machines (SSH or Password)."
       },
@@ -1755,8 +1756,7 @@
           "commandToExecute": "sh -c 'until ping -c1 leader.mesos;do echo waiting for leader.mesos;sleep 15;done;echo leader.mesos up'"
         },
         "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.4",
-        "autoUpgradeMinorVersion": true
+        "typeHandlerVersion": "1.4"
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     }
