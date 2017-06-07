@@ -1304,7 +1304,6 @@
         "autoUpgradeMinorVersion": true,
         "publisher": "Microsoft.OSTCExtensions",
         "settings": {
-          "commandToExecute": "sed -i '1s/^/sudo ifconfig eth0 mtu 1500\n/' /etc/rc.local",
           "commandToExecute": "[variables('masterCustomScript')]",
           "fileUris": [ ]
         },

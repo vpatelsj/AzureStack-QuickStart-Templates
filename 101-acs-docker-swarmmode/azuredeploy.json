@@ -381,7 +381,7 @@
     },
     "osImageVersion": {
       "type": "string",
-      "defaultValue": "16.04.201703070",
+      "defaultValue": "latest",
       "metadata": {
         "description": "Maps to the sku in the Azure Stack Platform Image Repository."
       }
@@ -1304,7 +1304,6 @@
         "autoUpgradeMinorVersion": true,
         "publisher": "Microsoft.OSTCExtensions",
         "settings": {
-          "commandToExecute": "sed -i '1s/^/sudo ifconfig eth0 mtu 1500\n/' /etc/rc.local",
           "commandToExecute": "[variables('masterCustomScript')]",
           "fileUris": [ ]
         },
