@@ -1255,7 +1255,7 @@
         "publisher": "Microsoft.Azure.Extensions",
         "settings": {},
         "type": "CustomScript",
-        "typeHandlerVersion": "1.0"
+        "typeHandlerVersion": "1.5"
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     },
@@ -1644,7 +1644,7 @@
         "publisher": "Microsoft.Azure.Extensions",
         "settings": {},
         "type": "CustomScript",
-        "typeHandlerVersion": "1.0"
+        "typeHandlerVersion": "1.5"
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     }
