@@ -2,12 +2,11 @@
   "apiVersion": "vlabs",
   "properties": {
     "orchestratorProfile": {
-      "orchestratorType": "Kubernetes",
-      "orchestratorVersion": "1.6.2"
+      "orchestratorType": "Kubernetes"
     },
     "masterProfile": {
       "count": 1,
-      "dnsPrefix": "k8-20170801",
+      "dnsPrefix": "k8-20170809",
       "vmSize": "Standard_D2_v2"
     },
     "agentPoolProfiles": [
@@ -29,8 +28,8 @@
       }
     },
     "servicePrincipalProfile": {
-      "servicePrincipalClientID": "7a1c9099-70c2-45bc-add9-bae938d8a7b4",
-      "servicePrincipalClientSecret": "V+d3hIndeSkHhdZLQrEuWlGNpYx8FlOwYpmma63HlCA="
+      "clientId": "7c4b28f9-526f-4ce6-9b2a-ba173dec1722",
+      "secret": "xc75F+LyP0gZ2QH/yQ/yzU9lKWOSFU5IjOsb//KxVvI="
     }
   }
 }
