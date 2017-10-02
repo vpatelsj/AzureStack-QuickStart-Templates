@@ -105,7 +105,7 @@
         99,
         100
       ],
-      "defaultValue": 3,
+      "defaultValue": 2,
       "metadata": {
         "description": "The number of agents for the cluster.  This value can be from 1 to 100"
       },
@@ -231,9 +231,9 @@
       "allowedValues": [
         "Standard_A0",
         "Standard_A1",
-        "Standard_A1_v2",
         "Standard_A10",
         "Standard_A11",
+        "Standard_A1_v2",
         "Standard_A2",
         "Standard_A2_v2",
         "Standard_A2m_v2",
@@ -249,7 +249,6 @@
         "Standard_A8m_v2",
         "Standard_A9",
         "Standard_D1",
-        "Standard_D1_v2",
         "Standard_D11",
         "Standard_D11_v2",
         "Standard_D11_v2_Promo",
@@ -263,19 +262,27 @@
         "Standard_D14_v2",
         "Standard_D14_v2_Promo",
         "Standard_D15_v2",
+        "Standard_D16_v3",
+        "Standard_D16s_v3",
+        "Standard_D1_v2",
         "Standard_D2",
         "Standard_D2_v2",
         "Standard_D2_v2_Promo",
+        "Standard_D2_v3",
+        "Standard_D2s_v3",
         "Standard_D3",
         "Standard_D3_v2",
         "Standard_D3_v2_Promo",
         "Standard_D4",
         "Standard_D4_v2",
         "Standard_D4_v2_Promo",
+        "Standard_D4_v3",
+        "Standard_D4s_v3",
         "Standard_D5_v2",
         "Standard_D5_v2_Promo",
+        "Standard_D8_v3",
+        "Standard_D8s_v3",
         "Standard_DS1",
-        "Standard_DS1_v2",
         "Standard_DS11",
         "Standard_DS11_v2",
         "Standard_DS11_v2_Promo",
@@ -289,6 +296,7 @@
         "Standard_DS14_v2",
         "Standard_DS14_v2_Promo",
         "Standard_DS15_v2",
+        "Standard_DS1_v2",
         "Standard_DS2",
         "Standard_DS2_v2",
         "Standard_DS2_v2_Promo",
@@ -300,6 +308,18 @@
         "Standard_DS4_v2_Promo",
         "Standard_DS5_v2",
         "Standard_DS5_v2_Promo",
+        "Standard_E16_v3",
+        "Standard_E16s_v3",
+        "Standard_E2_v3",
+        "Standard_E2s_v3",
+        "Standard_E32_v3",
+        "Standard_E32s_v3",
+        "Standard_E4_v3",
+        "Standard_E4s_v3",
+        "Standard_E64_v3",
+        "Standard_E64s_v3",
+        "Standard_E8_v3",
+        "Standard_E8s_v3",
         "Standard_F1",
         "Standard_F16",
         "Standard_F16s",
@@ -330,6 +350,8 @@
         "Standard_L32s",
         "Standard_L4s",
         "Standard_L8s",
+        "Standard_M128s",
+        "Standard_M64ms",
         "Standard_NC12",
         "Standard_NC24",
         "Standard_NC24r",
@@ -362,6 +384,13 @@
       },
       "type": "string"
     },
+    "caPrivateKey": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "The base 64 CA private key used on the master."
+      },
+      "type": "securestring"
+    },
     "clientCertificate": {
       "metadata": {
         "description": "The base 64 client certificate used to communicate with the master"
@@ -374,6 +403,195 @@
       },
       "type": "securestring"
     },
+    "cloudProviderBackoff": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Enable cloudprovider backoff?"
+      },
+      "type": "string"
+    },
+    "cloudProviderBackoffDuration": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "If backoff enabled, how long until timeout"
+      },
+      "type": "string"
+    },
+    "cloudProviderBackoffExponent": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "If backoff enabled, retry exponent"
+      },
+      "type": "string"
+    },
+    "cloudProviderBackoffJitter": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "If backoff enabled, jitter factor between retries"
+      },
+      "type": "string"
+    },
+    "cloudProviderBackoffRetries": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "If backoff enabled, how many times to retry"
+      },
+      "type": "string"
+    },
+    "cloudProviderRatelimit": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Enable cloudprovider rate limiting?"
+      },
+      "type": "string"
+    },
+    "cloudProviderRatelimitBucket": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "If rate limiting enabled, bucket size"
+      },
+      "type": "string"
+    },
+    "cloudProviderRatelimitQPS": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "If rate limiting enabled, target maximum QPS"
+      },
+      "type": "string"
+    },
+    "cloudprofileActiveDirectoryEndpoint": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileActiveDirectoryEndpoint"
+      },
+      "type": "string"
+    },
+    "cloudprofileContainerRegistryDNSSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileContainerRegistryDNSSuffix"
+      },
+      "type": "string"
+    },
+    "cloudprofileGalleryEndpoint": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileGalleryEndpoint"
+      },
+      "type": "string"
+    },
+    "cloudprofileGraphEndpoint": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileGraphEndpoint"
+      },
+      "type": "string"
+    },
+    "cloudprofileKeyVaultDNSSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileKeyVaultDNSSuffix"
+      },
+      "type": "string"
+    },
+    "cloudprofileKeyVaultEndpoint": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileKeyVaultEndpoint"
+      },
+      "type": "string"
+    },
+    "cloudprofileManagementPortalURL": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileManagementPortalURL"
+      },
+      "type": "string"
+    },
+    "cloudprofileName": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileName"
+      },
+      "type": "string"
+    },
+    "cloudprofilePublishSettingsURL": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofilePublishSettingsURL"
+      },
+      "type": "string"
+    },
+    "cloudprofileResourceManagerEndpoint": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileResourceManagerEndpoint"
+      },
+      "type": "string"
+    },
+    "cloudprofileResourceManagerSelfSignedCertificate": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileResourceManagerSelfSignedCertificate"
+      },
+      "type": "string"
+    },
+    "cloudprofileResourceManagerVMDNSSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileResourceManagerVMDNSSuffix"
+      },
+      "type": "string"
+    },
+    "cloudprofileSQLDatabaseDNSSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileSQLDatabaseDNSSuffix"
+      },
+      "type": "string"
+    },
+    "cloudprofileServiceBusEndpointSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileServiceBusEndpointSuffix"
+      },
+      "type": "string"
+    },
+    "cloudprofileServiceManagementEndpoint": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileServiceManagementEndpoint"
+      },
+      "type": "string"
+    },
+    "cloudprofileServiceManagementVMDNSSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileServiceManagementVMDNSSuffix"
+      },
+      "type": "string"
+    },
+    "cloudprofileStorageEndpointSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileStorageEndpointSuffix"
+      },
+      "type": "string"
+    },
+    "cloudprofileTrafficManagerDNSSuffix": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "cloudprofileTrafficManagerDNSSuffix"
+      },
+      "type": "string"
+    },
+    "dockerBridgeCidr": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Docker bridge network IP address and subnet"
+      },
+      "type": "string"
+    },
     "dockerEngineDownloadRepo": {
       "defaultValue": "https://aptdocker.azureedge.net/repo",
       "metadata": {
@@ -385,6 +603,13 @@
       "defaultValue": "10.240.255.5",
       "metadata": {
         "description": "Sets the static IP of the first master"
+      },
+      "type": "string"
+    },
+    "kubeClusterCidr": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Kubernetes cluster subnet"
       },
       "type": "string"
     },
@@ -411,6 +636,27 @@
       "defaultValue": "",
       "metadata": {
         "description": "The container spec for addon-resizer."
+      },
+      "type": "string"
+    },
+    "kubernetesCtrlMgrNodeMonitorGracePeriod": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Kubernetes controller manager grace period for node status updates."
+      },
+      "type": "string"
+    },
+    "kubernetesCtrlMgrPodEvictionTimeout": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Kubernetes controller manager pod eviction timeout."
+      },
+      "type": "string"
+    },
+    "kubernetesCtrlMgrRouteReconciliationPeriod": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Kubernetes controller manager route reconciliation period."
       },
       "type": "string"
     },
@@ -456,6 +702,13 @@
       },
       "type": "string"
     },
+    "kubernetesNodeStatusUpdateFrequency": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Kubelet config for node status update frequency interval."
+      },
+      "type": "string"
+    },
     "kubernetesPodInfraContainerSpec": {
       "defaultValue": "",
       "metadata": {
@@ -463,10 +716,23 @@
       },
       "type": "string"
     },
+    "kubernetesTillerSpec": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "The container spec for Helm Tiller."
+      },
+      "type": "string"
+    },
     "linuxAdminUsername": {
-      "defaultValue": "azureuser",
       "metadata": {
         "description": "User name for the Linux Virtual Machines (SSH or Password)."
+      },
+      "type": "string"
+    },
+    "location": {
+      "defaultValue": "",
+      "metadata": {
+        "description": "Sets the location for all resources in the cluster"
       },
       "type": "string"
     },
@@ -475,6 +741,20 @@
         "description": "Sets the Domain name label for the master IP Address.  The concatenation of the domain name label and the regional DNS zone make up the fully qualified domain name associated with the public IP address."
       },
       "type": "string"
+    },
+    "masterOffset": {
+      "allowedValues": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "defaultValue": 0,
+      "metadata": {
+        "description": "The offset into the master pool where to start creating master VMs.  This value can be from 0 to 4, but must be less than masterCount."
+      },
+      "type": "int"
     },
     "masterSubnet": {
       "defaultValue": "10.240.0.0/16",
@@ -514,17 +794,25 @@
         "Standard_D14_v2",
         "Standard_D14_v2_Promo",
         "Standard_D15_v2",
+        "Standard_D16_v3",
+        "Standard_D16s_v3",
         "Standard_D2",
         "Standard_D2_v2",
         "Standard_D2_v2_Promo",
+        "Standard_D2_v3",
+        "Standard_D2s_v3",
         "Standard_D3",
         "Standard_D3_v2",
         "Standard_D3_v2_Promo",
         "Standard_D4",
         "Standard_D4_v2",
         "Standard_D4_v2_Promo",
+        "Standard_D4_v3",
+        "Standard_D4s_v3",
         "Standard_D5_v2",
         "Standard_D5_v2_Promo",
+        "Standard_D8_v3",
+        "Standard_D8s_v3",
         "Standard_DS11",
         "Standard_DS11_v2",
         "Standard_DS11_v2_Promo",
@@ -549,6 +837,18 @@
         "Standard_DS4_v2_Promo",
         "Standard_DS5_v2",
         "Standard_DS5_v2_Promo",
+        "Standard_E16_v3",
+        "Standard_E16s_v3",
+        "Standard_E2_v3",
+        "Standard_E2s_v3",
+        "Standard_E32_v3",
+        "Standard_E32s_v3",
+        "Standard_E4_v3",
+        "Standard_E4s_v3",
+        "Standard_E64_v3",
+        "Standard_E64s_v3",
+        "Standard_E8_v3",
+        "Standard_E8s_v3",
         "Standard_F16",
         "Standard_F16s",
         "Standard_F2",
@@ -577,6 +877,8 @@
         "Standard_L32s",
         "Standard_L4s",
         "Standard_L8s",
+        "Standard_M128s",
+        "Standard_M64ms",
         "Standard_NC12",
         "Standard_NC24",
         "Standard_NC24r",
@@ -587,6 +889,20 @@
       ],
       "metadata": {
         "description": "The size of the Virtual Machine."
+      },
+      "type": "string"
+    },
+    "maxPods": {
+      "defaultValue": 110,
+      "metadata": {
+        "description": "The maximum number of pods per node."
+      },
+      "type": "int"
+    },
+    "nameSuffix": {
+      "defaultValue": "27013634",
+      "metadata": {
+        "description": "A string hash of the master DNS name to uniquely identify the cluster."
       },
       "type": "string"
     },
@@ -621,25 +937,18 @@
       "type": "string"
     },
     "targetEnvironment": {
-      "defaultValue": "AzureStackCloud",
+      "defaultValue": "AzurePublicCloud",
       "metadata": {
-        "description": "The azure deploy environment."
+        "description": "The azure deploy environment. Currently support: AzurePublicCloud, AzureChinaCloud"
       },
       "type": "string"
     },
-    "osImageSku": {
-      "type": "string",
-      "defaultValue": "16.04-LTS",
+    "vnetCidr": {
+      "defaultValue": "10.0.0.0/8",
       "metadata": {
-        "description": "Maps to the sku in the Azure Stack Platform Image Repository."
-      }
-    },
-    "osImageVersion": {
-      "type": "string",
-      "defaultValue": "16.04.201703070",
-      "metadata": {
-        "description": "Maps to the sku in the Azure Stack Platform Image Repository."
-      }
+        "description": "Cluster vnet cidr"
+      },
+      "type": "string"
     }
   },
   "variables": {
@@ -658,26 +967,68 @@
     "apiServerCertificate": "[parameters('apiServerCertificate')]",
     "apiServerPrivateKey": "[parameters('apiServerPrivateKey')]",
     "apiVersionDefault": "2015-06-15",
+    "apiVersionNetworking": "2015-05-01-preview",
     "apiVersionStorage": "2015-06-15",
     "caCertificate": "[parameters('caCertificate')]",
+    "caPrivateKey": "[parameters('caPrivateKey')]",
     "clientCertificate": "[parameters('clientCertificate')]",
     "clientPrivateKey": "[parameters('clientPrivateKey')]",
+    "cloudProviderBackoff": "[parameters('cloudProviderBackoff')]",
+    "cloudProviderBackoffDuration": "[parameters('cloudProviderBackoffDuration')]",
+    "cloudProviderBackoffExponent": "[parameters('cloudProviderBackoffExponent')]",
+    "cloudProviderBackoffJitter": "[parameters('cloudProviderBackoffJitter')]",
+    "cloudProviderBackoffRetries": "[parameters('cloudProviderBackoffRetries')]",
+    "cloudProviderRatelimit": "[parameters('cloudProviderRatelimit')]",
+    "cloudProviderRatelimitBucket": "[parameters('cloudProviderRatelimitBucket')]",
+    "cloudProviderRatelimitQPS": "[parameters('cloudProviderRatelimitQPS')]",
+    "cloudprofileActiveDirectoryEndpoint": "[parameters('cloudprofileActiveDirectoryEndpoint')]",
+    "cloudprofileContainerRegistryDNSSuffix": "[parameters('cloudprofileContainerRegistryDNSSuffix')]",
+    "cloudprofileGalleryEndpoint": "[parameters('cloudprofileGalleryEndpoint')]",
+    "cloudprofileGraphEndpoint": "[parameters('cloudprofileGraphEndpoint')]",
+    "cloudprofileKeyVaultDNSSuffix": "[parameters('cloudprofileKeyVaultDNSSuffix')]",
+    "cloudprofileKeyVaultEndpoint": "[parameters('cloudprofileKeyVaultEndpoint')]",
+    "cloudprofileManagementPortalURL": "[parameters('cloudprofileManagementPortalURL')]",
+    "cloudprofileName": "[parameters('cloudprofileName')]",
+    "cloudprofilePublishSettingsURL": "[parameters('cloudprofilePublishSettingsURL')]",
+    "cloudprofileResourceManagerEndpoint": "[parameters('cloudprofileResourceManagerEndpoint')]",
+    "cloudprofileResourceManagerSelfSignedCertificate": "[parameters('cloudprofileResourceManagerSelfSignedCertificate')]",
+    "cloudprofileResourceManagerVMDNSSuffix": "[parameters('cloudprofileResourceManagerVMDNSSuffix')]",
+    "cloudprofileSQLDatabaseDNSSuffix": "[parameters('cloudprofileSQLDatabaseDNSSuffix')]",
+    "cloudprofileServiceBusEndpointSuffix": "[parameters('cloudprofileServiceBusEndpointSuffix')]",
+    "cloudprofileServiceManagementEndpoint": "[parameters('cloudprofileServiceManagementEndpoint')]",
+    "cloudprofileServiceManagementVMDNSSuffix": "[parameters('cloudprofileServiceManagementVMDNSSuffix')]",
+    "cloudprofileStorageEndpointSuffix": "[parameters('cloudprofileStorageEndpointSuffix')]",
+    "cloudprofileTrafficManagerDNSSuffix": "[parameters('cloudprofileTrafficManagerDNSSuffix')]",
+    "contributorRoleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
+    "dataStorageAccountPrefixSeed": 97,
+    "dockerBridgeCidr": "[parameters('dockerBridgeCidr')]",
     "dockerEngineDownloadRepo": "[parameters('dockerEngineDownloadRepo')]",
     "dockerEngineVersion": "1.12.*",
+    "kubeClusterCidr": "[parameters('kubeClusterCidr')]",
     "kubeConfigCertificate": "[parameters('kubeConfigCertificate')]",
     "kubeConfigPrivateKey": "[parameters('kubeConfigPrivateKey')]",
     "kubeDnsServiceIp": "10.0.0.10",
     "kubeServiceCidr": "10.0.0.0/16",
+    "kubernetesAPIServerIP": "[parameters('firstConsecutiveStaticIP')]",
     "kubernetesAddonManagerSpec": "[parameters('kubernetesAddonManagerSpec')]",
     "kubernetesAddonResizerSpec": "[parameters('kubernetesAddonResizerSpec')]",
+    "kubernetesCtrlMgrNodeMonitorGracePeriod": "[parameters('kubernetesCtrlMgrNodeMonitorGracePeriod')]",
+    "kubernetesCtrlMgrPodEvictionTimeout": "[parameters('kubernetesCtrlMgrPodEvictionTimeout')]",
+    "kubernetesCtrlMgrRouteReconciliationPeriod": "[parameters('kubernetesCtrlMgrRouteReconciliationPeriod')]",
     "kubernetesDNSMasqSpec": "[parameters('kubernetesDNSMasqSpec')]",
     "kubernetesDashboardSpec": "[parameters('kubernetesDashboardSpec')]",
     "kubernetesExecHealthzSpec": "[parameters('kubernetesExecHealthzSpec')]",
     "kubernetesHeapsterSpec": "[parameters('kubernetesHeapsterSpec')]",
     "kubernetesHyperkubeSpec": "[parameters('kubernetesHyperkubeSpec')]",
     "kubernetesKubeDNSSpec": "[parameters('kubernetesKubeDNSSpec')]",
+    "kubernetesNodeStatusUpdateFrequency": "[parameters('kubernetesNodeStatusUpdateFrequency')]",
     "kubernetesPodInfraContainerSpec": "[parameters('kubernetesPodInfraContainerSpec')]",
-    "location": "[resourceGroup().location]",
+    "kubernetesTillerSpec": "[parameters('kubernetesTillerSpec')]",
+    "location": "[variables('locations')[mod(add(2,length(parameters('location'))),add(1,length(parameters('location'))))]]",
+    "locations": [
+      "[resourceGroup().location]",
+      "[parameters('location')]"
+    ],
     "masterAvailabilitySet": "[concat('master-availabilityset-', variables('nameSuffix'))]",
     "masterCount": 1,
     "masterEtcdClientPort": 2379,
@@ -706,17 +1057,12 @@
     "masterFirstAddrOctets": "[split(parameters('firstConsecutiveStaticIP'),'.')]",
     "masterFirstAddrPrefix": "[concat(variables('masterFirstAddrOctets')[0],'.',variables('masterFirstAddrOctets')[1],'.',variables('masterFirstAddrOctets')[2],'.')]",
     "masterFqdnPrefix": "[tolower(parameters('masterEndpointDNSNamePrefix'))]",
-    "masterInternalLbID": "[resourceId('Microsoft.Network/loadBalancers',variables('masterInternalLbName'))]",
-    "masterInternalLbIPConfigID": "[concat(variables('masterInternalLbID'),'/frontendIPConfigurations/', variables('masterInternalLbIPConfigName'))]",
-    "masterInternalLbIPConfigName": "[concat(variables('orchestratorName'), '-master-internal-lbFrontEnd-', variables('nameSuffix'))]",
-    "masterInternalLbIPOffset": 10,
-    "masterInternalLbIp": "[concat(variables('masterFirstAddrPrefix'), add(variables('masterInternalLbIPOffset'), int(variables('masterFirstAddrOctet4'))))]",
-    "masterInternalLbName": "[concat(variables('orchestratorName'), '-master-internal-lb-', variables('nameSuffix'))]",
     "masterLbBackendPoolName": "[concat(variables('orchestratorName'), '-master-pool-', variables('nameSuffix'))]",
     "masterLbID": "[resourceId('Microsoft.Network/loadBalancers',variables('masterLbName'))]",
     "masterLbIPConfigID": "[concat(variables('masterLbID'),'/frontendIPConfigurations/', variables('masterLbIPConfigName'))]",
     "masterLbIPConfigName": "[concat(variables('orchestratorName'), '-master-lbFrontEnd-', variables('nameSuffix'))]",
     "masterLbName": "[concat(variables('orchestratorName'), '-master-lb-', variables('nameSuffix'))]",
+    "masterOffset": "[parameters('masterOffset')]",
     "masterPrivateIp": "[parameters('firstConsecutiveStaticIP')]",
     "masterPrivateIpAddrs": [
       "[concat(variables('masterFirstAddrPrefix'), add(0, int(variables('masterFirstAddrOctet4'))))]",
@@ -736,25 +1082,28 @@
       "[concat(variables('masterVMNamePrefix'), '4')]"
     ],
     "masterVMSize": "[parameters('masterVMSize')]",
+    "maxPods": "[parameters('maxPods')]",
     "maxStorageAccountsPerAgent": "[div(variables('maxVMsPerPool'),variables('maxVMsPerStorageAccount'))]",
     "maxVMsPerPool": 100,
     "maxVMsPerStorageAccount": 20,
-    "nameSuffix": "[uniqueString(resourceGroup().id)]",
+    "nameSuffix": "[parameters('nameSuffix')]",
     "networkPolicy": "[parameters('networkPolicy')]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "nsgName": "[concat(variables('masterVMNamePrefix'), 'nsg')]",
     "orchestratorName": "k8s",
-    "orchestratorNameVersionTag": "Kubernetes:1.6.2",
+    "orchestratorNameVersionTag": "Kubernetes:1.7.4",
     "osImageOffer": "UbuntuServer",
     "osImagePublisher": "Canonical",
-    "osImageSKU": "[parameters('osImageSku')]",
-    "osImageVersion": "[parameters('osImageVersion')]",
-    "primaryAvailablitySetName": "[concat('agentpool1-availabilitySet-',variables('nameSuffix'))]",
-    "provisionScript": "H4sIAAAAAAAA/9Qaa3caN/Zz51fcjDk5u93ODE7sPEi9PQTG6TQOuIDdk21aKmaEUT0jsZLGNnH473skzRMG4k26H9YfEpDu+6V7JQ4eeTNCvRkSC8s6+PI/6wDGk+5oAmO/N/In0O9OuuCA3/txCP1g3H195ve/ir51AKcEx5GAOePwB/qYcuz+KRj9w5r4g+5gMg36J3br/nBtW+OL1wN/Mu6NgvNJMBxkO0/WtjXyx8OLUc+fvhkNL87V6tO1bZ0Ne10FqL4fFfjq2/Hatgb+5Jfh6O107PcuRsHkfYn7bG1bl8FoctE9m2ZQavm5YjS8mPjTidJbLb1Y29b5KHjXHb2fdi+7wVn3dXCmaI0Nn5eKqz+6DHr+9HwUDHrBefds2jsL/FKx9j4YY3YNpyzw9uK1f+ZPFNxld+JP3/rv9Z6ywaQ7euNPpv7gMhgNB+/8gUF7WlH1fHgW9AyGsod1AO+QkJgDo/EKBA45lsLqngdKHn+0xUaZrded9vzRJDgNet2JNsKhste77njij6anP/e1uQ+fZ9L2hoPT4M0Wyov6ds5A2avbfxcMLsb+SDu3beQM5tAoFhABOFnK1XcgF5jCLQbEMVAmgVG1BInW0CJz+PVXeATOR7Bb94201jb89tsrTccCAMDhgoG9ky1l1MlYIyHShNCrjBlQFmHb0kQa0afn3cmPJ7aHZehdpzPMKZZYeCHmUnhoSQTmN5i713hlayKSpeFip9ya2tpAhouERdB+dnT0QHB2S4EzJjvqnwfhGLPstuEnmCGBnx2B40Q4ZBGGf36WrjHVvy5G/vSn8XCwwz5lcdg0Sx2z2RY7YLYN0AyIJHz/PfjD00ydLah7DWeHMUsju2O37rcTcm1/Z4AkpojKILI7ilZR6Ip9kc5EyMlSEkZzqO3qV4AjFPVigkuKe2rONtJY5/1nEE0hKpA5FizlIX7DWbo0qPUaXEDGLERKDQOUl+SqphTLAUpwVctyG4cpJ3Kl+ZRQzbW7wLqpkdwo5aUOLJV4gmYxLmEr9b2AW3KSIL7q3iASoxmJiVyNq/R3HQBr21pb/vDUsnAs8ENKymY5uWX8uignc2I11f+9tSTUDjaFpMiWXUTWtlVPmb2AW3mzBzovGQ0guwvGHnpf2dH4gz4MT6stzde1MAJLcO7UMXWLiNSNjPJEKGOQDDheMi5BpGGIhZinMYRxqo+JBUaxXFjzlIYqQwBTkXL81qD+7e9gKkpGas5SGp0c6iXFgQChcH/ous/a7fUriJjeUX/qqAMHg5cK7qn0i3UvmIv0WwFYnHT5X41Vu7Y14xhdFytzUnwUMcZLMHJFjJo41yK0quTAoRjaGfMaYw37qBBYiRqxUMX9HklNROUqUcYhw4lIpE9/QoVEcVwxe5wdpgWJOyIzuSsqzYm1tkqXROyWxgxFFzwG7ZFvDuAXjpZLzAFxrViYcu3nHBRmMZsJSBjHwHFM0CxeuRqP8esMRzUmjsOx5CsgQqRYwC2RC0DatTFjS0A0AhVYCBJ0B5IkmKXStb4pfH8IT+ApHMGxcr6RwnESdOcoWHjWBmcuxmegWudXyhs/gIP/rVwAjx8bd8KnT7n72q+M86q6CywHWKoadB6nV4RCEZICR+AQsIX3e56lRYt5dvEmGJy433o7dpQ8ng26XkV4jtJY6tCMsdzk3tcuHS6laGB98Ht/2Hvrj6bD88n4xP32oPpVMTl4AJOQ0Tm56qq+IleVxSRcFex6g2Ca9aj9YHSiCYaUeBRLN9IQyXVEODhLaNVhrUp/4YwqpXITrmxVnh8fN1M5gH4eXFpWuBz4EyUbLLVnhFsI+zoYGEnZUmpJZ4Q2yJmB5eTfEc4ZhzlnCSykXIqO510RuUhnbsgSTzM17ZcTMioRoZg71FiM0CuP4xgjgYUn0ZXXMr2R8ff00h9lmOpUdkJKnJjQ9M5BSfTsyNkCduXVx6yYlKmXy4RC4SRaVlfTxNEVdik2mu7hEiOJhVSk4RNIxMG5+whOr26LB5miUL+ivWJeWCAX29O0R/6Z3x372gpKqEzpja1xMBx8ud4l3YeoCa6n6ssMhdd7I7RqFROezqiM0I346bHlKksmmJPYHALJTQ3WO2w7poNXgJuB7lUYqfZjc7uGXGRFmiwBz6Tq4QTwNMZZJnhCHSPFjiOBIgmOExMhc2Sfqk2VNG5WWTbKXUhJvlGpRDY4zg2L0wSX1aCTf+pwVtnOU7CTf+pwZjfUnx6KSciaC9AXzK1GPUazaVQUi91+fzgYn9ih5ucY5glauiuUxJCtRggnjAos9aq9gWy6za3BLIoYLfn0umdBbzi9GJ2d2HkEc3TrmjRKBeYqi1RjqjJqydmfOJSGvZf9h47wbD5D0fExmh3Ons8P2/No/nT29OXxi+Oj54fzF+3DJ/jFyxfezRO37V1hKQm9coREXOKoKlrWB+gRxFswobdfCEfFP6aRo0V3EkTRFebZIGoMWJznRiRQ5ih1VMewxlVHceveWKfeh20ms926Ly2z9lr3Gn9tZwNlad/KnlUSylqrYpYo3IyuMJWlZDvj+H8Qyw0dk4mqfcFcmd/MhdTahhOwdXo3hPKuMzqzxl6axnU7iTYkXpONBwyWevM7yJoJoRo+FWWqD9ht+Qxil/Ub7WeGAANWdj0rIXGiWl1sqpbpdjf2ONYJUN00H8cmL5qmh5cN08OjrU6c0Dl7tasLFxLJVEDrh3p/rfH3Crdl6pJmxjdLaHsjp6o6ff2YUqO3e06pCZaPGVrAUrzKTNHo1remB93t17xJbXZsUwuL7yRHoSymxj2EQxk7GfgeBlWobQ1+YimnqIGPOTccjlW5a5bBLETOn4ZG5ArMb0iIdwizE3xbqm5+Z1qbms0RsCf4/8LReQdGNuo7KoFq8JqT3fpBl6m2XSHdSB5qM69RrDk7mpVvb8HUM2UjW7aycrMgLAV8giuOl1BcV/8fqffw64sam8/VhorsX1gffBlGRQjvD9WGgV/1Wh3PO3zy3G27bfew8+Tp85fezRMvQeGCUCxe1QO9vBL43EWLkkudXulyz4XKZ2rvcWnjZsX7SKI+KVM4YSmVeZh5Eb7xRBQeFgs3iHsxmal2JYqIuLZ2x12Dr7RGRA0NlOqrViIXECGJQI3JSHa2GZTacixTTrdbBUN6CxFukdDRYG7CkCy1cWHCV4q/ZJm+KI4hwqrOCdeutZuVWNhuNEUa5RQcBI8f/7fWe/XXpO+27loOHBmT5mJs53TFpA0RtBlFUM3WOdFte8WvhR83Db/Lq1leVuPylhOpz+uebhWLqCxfLfU1y4Il2GsVb5aeq4rABuBpcOaftGqInmlAN25maiAmcvWlfatOqzK3l5w75ccmQg8Er5DXN1LtdjMxPabXNzWq3j79uT8Yp/M5uTsxz2FouXTz6T2xq4m6/UamQ053+70Foainn9Oa8riRi6pzKPtG3JAWLTaYmY4I3YnE7OpKZR2aS9Vl6gcwYKlcpjIf+eEfd1YZ15bjOBZakkvMBWG0AzeHVna2i47l5Od8x5gHc0nmJEQSOyiVC8aJXDkqKDvwwW7VX9A/2BlHdYZ2ihufVuVB3W3lz2Zuq9TaAqAowZpkBfiDbenp+k4awcznTLBMym0UtasG880tB0UJoRpgF7OUc0ylkzPahrgmNOqASSNLMdGCNZGrcNPCZEITTb9i1MKUzb8wyPTJEK/xqhHhrf/+g22p6bsp/g+AZ11rU6yIIkqcO1U1DvKXf0Qj/VxnVcc4q2EmtmoDgVXv4q1ar10hr3+n8SW/ZdioZiayq89NlZXKWbyxWvladNz6XfIv+IGGybMge7YJWbKMscQb7Yb1nwAAAP//A8nbyNgkAAA=",
-    "registerSchedulable": "false",
+    "osImageSKU": "16.04-LTS",
+    "osImageVersion": "latest",
+    "primaryAvailabilitySetName": "[concat('agentpool1-availabilitySet-',variables('nameSuffix'))]",
+    "provisionScript": "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",
+    "readerRoleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
+    "registerWithTaints": "node-role.kubernetes.io/master=true:NoSchedule",
     "resourceGroup": "[resourceGroup().name]",
     "routeTableID": "[resourceId('Microsoft.Network/routeTables', variables('routeTableName'))]",
     "routeTableName": "[concat(variables('masterVMNamePrefix'),'routetable')]",
+    "scope": "[resourceGroup().id]",
     "servicePrincipalClientId": "[parameters('servicePrincipalClientId')]",
     "servicePrincipalClientSecret": "[parameters('servicePrincipalClientSecret')]",
     "sshKeyPath": "[concat('/home/',variables('username'),'/.ssh/authorized_keys')]",
@@ -811,13 +1160,24 @@
     "subscriptionId": "[subscription().subscriptionId]",
     "targetEnvironment": "[parameters('targetEnvironment')]",
     "tenantId": "[subscription().tenantId]",
+    "useInstanceMetadata": "false",
+    "useManagedIdentityExtension": "false",
     "username": "[parameters('linuxAdminUsername')]",
     "virtualNetworkName": "[concat(variables('orchestratorName'), '-vnet-', variables('nameSuffix'))]",
     "vmSizesMap": {
+      "Standard_A0": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_A1": {
+        "storageAccountType": "Standard_LRS"
+      },
       "Standard_A10": {
         "storageAccountType": "Standard_LRS"
       },
       "Standard_A11": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_A1_v2": {
         "storageAccountType": "Standard_LRS"
       },
       "Standard_A2": {
@@ -862,6 +1222,9 @@
       "Standard_A9": {
         "storageAccountType": "Standard_LRS"
       },
+      "Standard_D1": {
+        "storageAccountType": "Standard_LRS"
+      },
       "Standard_D11": {
         "storageAccountType": "Standard_LRS"
       },
@@ -901,6 +1264,15 @@
       "Standard_D15_v2": {
         "storageAccountType": "Standard_LRS"
       },
+      "Standard_D16_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_D16s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_D1_v2": {
+        "storageAccountType": "Standard_LRS"
+      },
       "Standard_D2": {
         "storageAccountType": "Standard_LRS"
       },
@@ -909,6 +1281,12 @@
       },
       "Standard_D2_v2_Promo": {
         "storageAccountType": "Standard_LRS"
+      },
+      "Standard_D2_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_D2s_v3": {
+        "storageAccountType": "Premium_LRS"
       },
       "Standard_D3": {
         "storageAccountType": "Standard_LRS"
@@ -928,11 +1306,26 @@
       "Standard_D4_v2_Promo": {
         "storageAccountType": "Standard_LRS"
       },
+      "Standard_D4_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_D4s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
       "Standard_D5_v2": {
         "storageAccountType": "Standard_LRS"
       },
       "Standard_D5_v2_Promo": {
         "storageAccountType": "Standard_LRS"
+      },
+      "Standard_D8_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_D8s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_DS1": {
+        "storageAccountType": "Premium_LRS"
       },
       "Standard_DS11": {
         "storageAccountType": "Premium_LRS"
@@ -973,6 +1366,9 @@
       "Standard_DS15_v2": {
         "storageAccountType": "Premium_LRS"
       },
+      "Standard_DS1_v2": {
+        "storageAccountType": "Premium_LRS"
+      },
       "Standard_DS2": {
         "storageAccountType": "Premium_LRS"
       },
@@ -1006,10 +1402,52 @@
       "Standard_DS5_v2_Promo": {
         "storageAccountType": "Premium_LRS"
       },
+      "Standard_E16_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_E16s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_E2_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_E2s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_E32_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_E32s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_E4_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_E4s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_E64_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_E64s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_E8_v3": {
+        "storageAccountType": "Standard_LRS"
+      },
+      "Standard_E8s_v3": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_F1": {
+        "storageAccountType": "Standard_LRS"
+      },
       "Standard_F16": {
         "storageAccountType": "Standard_LRS"
       },
       "Standard_F16s": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_F1s": {
         "storageAccountType": "Premium_LRS"
       },
       "Standard_F2": {
@@ -1090,6 +1528,12 @@
       "Standard_L8s": {
         "storageAccountType": "Premium_LRS"
       },
+      "Standard_M128s": {
+        "storageAccountType": "Premium_LRS"
+      },
+      "Standard_M64ms": {
+        "storageAccountType": "Premium_LRS"
+      },
       "Standard_NC12": {
         "storageAccountType": "Standard_LRS"
       },
@@ -1113,7 +1557,7 @@
       }
     },
     "vmsPerStorageAccount": 20,
-    "vnetCidr": "10.0.0.0/8",
+    "vnetCidr": "[parameters('vnetCidr')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "vnetSubnetID": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]"
   },
@@ -1197,11 +1641,12 @@
           ]
         },
         "osProfile": {
+          "adminPassword": "!!123abc!!123abc",
           "adminUsername": "[variables('username')]",
           "computername": "[concat(variables('agentpool1VMNamePrefix'), copyIndex(variables('agentpool1Offset')))]",
-          "customData": "[base64(concat('#cloud-config\n\nwrite_files:\n- path: \"/etc/systemd/system/docker.service.d/clear_mount_propagation_flags.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    MountFlags=shared\n\n- path: \"/etc/systemd/system/docker.service.d/exec_start.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    ExecStart=\n    ExecStart=/usr/bin/docker daemon -H fd:// --storage-driver=overlay --log-driver=journald\n\n- path: \"/etc/systemd/journald.conf.d/kubernetes.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Journal]\n    Storage=persistent\n    ForwardToSyslog=no\n    MaxLevelConsole=warning\n    RateLimitInterval=1s\n    RateLimitBurst=20000\n\n- path: \"/etc/docker/daemon.json\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    {\n      \"live-restore\": true\n    }\n\n- path: \"/etc/kubernetes/certs/ca.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('caCertificate'),'\n\n- path: \"/etc/kubernetes/certs/apiserver.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('apiserverCertificate'),'\n\n- path: \"/etc/kubernetes/certs/client.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('clientCertificate'),'\n\n- path: \"/var/lib/kubelet/kubeconfig\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    apiVersion: v1\n    kind: Config\n    clusters:\n    - name: localcluster\n      cluster:\n        certificate-authority: /etc/kubernetes/certs/ca.crt\n        server: https://',variables('masterInternalLbIp'),':443\n    users:\n    - name: client\n      user:\n        client-certificate: /etc/kubernetes/certs/client.crt\n        client-key: /etc/kubernetes/certs/client.key\n    contexts:\n    - context:\n        cluster: localcluster\n        user: client\n      name: localclustercontext\n    current-context: localclustercontext\n\n- path: \"/etc/systemd/system/kubectl-extract.service\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Unit]\n    Description=Kubectl extraction\n    Requires=docker.service\n    After=docker.service\n    ConditionPathExists=!/usr/local/bin/kubectl\n\n    [Service]\n    TimeoutStartSec=0\n    Restart=on-failure\n    RestartSec=5s\n    ExecStartPre=/bin/mkdir -p /tmp/kubectldir\n    ExecStartPre=/usr/bin/docker pull ',variables('kubernetesHyperkubeSpec'),'\n    ExecStartPre=/usr/bin/docker run --rm -v /tmp/kubectldir:/opt/kubectldir ',variables('kubernetesHyperkubeSpec'),' /bin/bash -c \"cp /hyperkube /opt/kubectldir/\"\n    ExecStartPre=/bin/mv /tmp/kubectldir/hyperkube /usr/local/bin/kubectl\n    ExecStart=/bin/chmod a+x /usr/local/bin/kubectl\n\n    [Install]\n    WantedBy=multi-user.target\n\n- path: \"/etc/default/kubelet\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    KUBELET_CLUSTER_DNS=',variables('kubeDnsServiceIP'),'\n    KUBELET_API_SERVERS=https://',variables('masterInternalLbIp'),':443\n    KUBELET_IMAGE=',variables('kubernetesHyperkubeSpec'),'\n    KUBELET_NETWORK_PLUGIN=kubenet\n    DOCKER_OPTS=\n    CUSTOM_CMD=/bin/true\n    KUBELET_REGISTER_SCHEDULABLE=true\n    KUBELET_NODE_LABELS=role=agent,failure-domain.beta.kubernetes.io/region=',variables('location'),'\n    KUBELET_POD_INFRA_CONTAINER_IMAGE=',variables('kubernetesPodInfraContainerSpec'),'\n\n- path: \"/etc/systemd/system/kubelet.service\"\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/5RV32/iOBB+z19hoT7sSmuy9+OJVR5oSXuoLFSkvZWurZCTDIkPx87N2LD0tv/7KSEUEuidTkiRPTPf93l+2Dw+aGmfvRFQgrK00ujg1sWgwHpz+MtJBApSk6wA+wS4lgl4w6UF7Bq9x2i3evbmQFagDYTaiC15oV5LNLoAba+lgsAHm/gpLIVT1l81WpFLEiAKv0sbWWEdBT/9+osXfockqrjuEAI/ltqPBeXMN6X1xYtD8BOjrZAakPZUfcrP4IpVKpHxkvlrgb6S8ZvyOxo8YT25ZI/s4kNhnLbsB8sQSvbU6zI89dgPtkkYVx8ZV8A+s2f2hdkcNNtJ13DOY6nTE/lTwxe2lL1zGTQ0hVgBp1wgnLK1YdynCgixFbECYtwyLSoKJel8qCz/O7RdonpHW7JQJFYxAsvh0G92+3AZTsL7xfUouPhQxybCsnoCqiOjBgvkL9OP5zL+vyK/f43Gf4T/JrQuSL7AsVjgO8I6fjfPDJ1mTx5jnGuwQW7INttSpq0tyrVUkEHaGLBoFmujXAGBn8J6UH06ZtrSoP6g6XiqZqLTg7cFbs5EVO3endUfdAzvA5r5OEI0lkEzSWdgJhu8LU6IO4UddAynyRGu24C2oQJcjGZXt+F8Mbu7j2o0Yxd/75s7/jq8CV8bM2N+vi0BKzzbX5y9q1KtbInRS5md1uDga0Fw99rxd9ylSbnUSxT87cnhshAZBL3DIe9mo8V4ej0fLq5m0/vheBrOm4P3WmQiTRGIgs/9+tf2KWU2R+MVWHTQigBdXVJevbyA5zwpxC7LpM54LnSqAOkklUJouQSyvBQ2P2nn3tvGJcqRBeSppuCQ89XkIboP54vRNHo9H24KIXXQbPvKJEJ1Kp/JOpKSHFKnqhyOBObhzbhWiK5+C0cPk+HlJGwraZMCVyIGRcfdmM5G4WIyvAwn0eunGKzoH1LsS+NLTVboBLjdlseCu3fk9dNSSOUQmgT6ZxhejD4GXo+6fa7+o44GZpcpbvl+Njt1r+P7f5LRLZpcSCyl5oVJISjRFJISZxzxGGWatYdDg90YXPFSuUzqo8NNw/tvs/nt4m7ycDOetgu4Dn72vMdxVQ+lnr1vQltIL7dB4ZSV3BFg3wrMwHr/BAAA//9jAs6PLwgAAA==\n\n- path: \"/opt/azure/containers/kubelet.sh\"\n  permissions: \"0755\"\n  owner: \"root\"\n  content: |\n    #!/bin/bash\n    echo $(curl -f --retry 5 http://169.254.169.254/metadata/v1/InstanceInfo 2>/dev/null | sed \"s/.*\\\"FD\\\":\\\"\\([0-9]*\\).*/\\1/\") > /etc/kubernetes/fd\n    echo \"',variables('agentpool1VMSize'),'\" > /etc/kubernetes/vmsize\n\n- path: \"/opt/azure/containers/provision.sh\"\n  permissions: \"0744\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    ',variables('provisionScript'),'\n\nruncmd:\n- apt-get update\n- apt-get install -y apt-transport-https ca-certificates nfs-common\n- systemctl enable rpcbind\n- systemctl enable rpc-statd\n- systemctl start rpcbind\n- systemctl start rpc-statd\n- for i in 1 2 3 4 5; do curl --max-time 60 -fsSL https://aptdocker.azureedge.net/gpg | apt-key add -; [ $? -eq 0 ] && break || sleep 5; done\n- echo \"deb ',variables('dockerEngineDownloadRepo'),' ubuntu-xenial main\" | sudo tee /etc/apt/sources.list.d/docker.list\n- \"echo \\\"Package: docker-engine\\nPin: version ',variables('dockerEngineVersion'),'\\nPin-Priority: 550\\n\\\" > /etc/apt/preferences.d/docker.pref\"\n- apt-get update\n- apt-get install -y ebtables\n- apt-get install -y docker-engine\n- systemctl restart docker\n- mkdir -p /etc/kubernetes/manifests\n- usermod -aG docker ',variables('username'),'\n\n'))]",
+          "customData": "[base64(concat('#cloud-config\npackages:\n - pwgen\n - pastebinit\n \nwrite_files:\n- path: \"/etc/kubernetes/azurestackcloud.json\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    {\n      \"name\": \"',variables('cloudprofileName'),'\",\n      \"managementPortalURL\": \"',variables('cloudprofileManagementPortalURL'),'\",\n      \"publishSettingsURL\": \"',variables('cloudprofilePublishSettingsURL'),'\",\n      \"serviceManagementEndpoint\": \"',variables('cloudprofileServiceManagementEndpoint'),'\",\n      \"resourceManagerEndpoint\": \"',variables('cloudprofileResourceManagerEndpoint'),'\",\n      \"activeDirectoryEndpoint\": \"',variables('cloudprofileActiveDirectoryEndpoint'),'\",\n      \"galleryEndpoint\": \"',variables('cloudprofileGalleryEndpoint'),'\",\n      \"keyVaultEndpoint\": \"',variables('cloudprofileKeyVaultEndpoint'),'\",\n      \"graphEndpoint\": \"',variables('cloudprofileGraphEndpoint'),'\",\n      \"storageEndpointSuffix\": \"',variables('cloudprofileStorageEndpointSuffix'),'\",\n      \"sQLDatabaseDNSSuffix\": \"',variables('cloudprofileSQLDatabaseDNSSuffix'),'\",\n      \"trafficManagerDNSSuffix\": \"',variables('cloudprofileTrafficManagerDNSSuffix'),'\",\n      \"keyVaultDNSSuffix\": \"',variables('cloudprofileKeyVaultDNSSuffix'),'\",\n      \"serviceBusEndpointSuffix\": \"',variables('cloudprofileServiceBusEndpointSuffix'),'\",\n      \"serviceManagementVMDNSSuffix\": \"',variables('cloudprofileServiceManagementVMDNSSuffix'),'\",\n      \"resourceManagerVMDNSSuffix\": \"',variables('cloudprofileResourceManagerVMDNSSuffix'),'\",\n      \"containerRegistryDNSSuffix\": \"',variables('cloudprofileContainerRegistryDNSSuffix'),'\"\n    }\n\n- path: \"/usr/local/share/ca-certificates/azurestack.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('cloudprofileResourceManagerSelfSignedCertificate'),'\n\n- path: \"/etc/systemd/system/docker.service.d/clear_mount_propagation_flags.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    MountFlags=shared\n\n- path: \"/etc/systemd/system/docker.service.d/exec_start.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    ExecStart=\n    ExecStart=/usr/bin/docker daemon -H fd:// --storage-driver=overlay --bip=',variables('dockerBridgeCidr'),'\n\n- path: \"/etc/docker/daemon.json\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    {\n      \"live-restore\": true,\n      \"log-driver\": \"json-file\",\n      \"log-opts\":  {\n         \"max-size\": \"200m\",\n         \"max-file\": \"25\"\n      }\n    }\n\n- path: \"/etc/kubernetes/certs/ca.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('caCertificate'),'\n\n- path: \"/etc/kubernetes/certs/apiserver.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('apiserverCertificate'),'\n\n- path: \"/etc/kubernetes/certs/client.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('clientCertificate'),'\n\n- path: \"/var/lib/kubelet/kubeconfig\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    apiVersion: v1\n    kind: Config\n    clusters:\n    - name: localcluster\n      cluster:\n        certificate-authority: /etc/kubernetes/certs/ca.crt\n        server: https://',variables('kubernetesAPIServerIP'),':443\n    users:\n    - name: client\n      user:\n        client-certificate: /etc/kubernetes/certs/client.crt\n        client-key: /etc/kubernetes/certs/client.key\n    contexts:\n    - context:\n        cluster: localcluster\n        user: client\n      name: localclustercontext\n    current-context: localclustercontext\n\n- path: \"/etc/systemd/system/kubectl-extract.service\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Unit]\n    Description=Kubectl extraction\n    Requires=docker.service\n    After=docker.service\n    ConditionPathExists=!/usr/local/bin/kubectl\n\n    [Service]\n    TimeoutStartSec=0\n    Restart=on-failure\n    RestartSec=5s\n    ExecStartPre=/bin/mkdir -p /tmp/kubectldir\n    ExecStartPre=/usr/bin/docker pull ',variables('kubernetesHyperkubeSpec'),'\n    ExecStartPre=/usr/bin/docker run --rm -v /tmp/kubectldir:/opt/kubectldir ',variables('kubernetesHyperkubeSpec'),' /bin/bash -c \"cp /hyperkube /opt/kubectldir/\"\n    ExecStartPre=/bin/mv /tmp/kubectldir/hyperkube /usr/local/bin/kubectl\n    ExecStart=/bin/chmod a+x /usr/local/bin/kubectl\n\n    [Install]\n    WantedBy=multi-user.target\n\n- path: \"/etc/default/kubelet\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    KUBELET_CLUSTER_DNS=',variables('kubeDnsServiceIP'),'\n    KUBELET_API_SERVERS=https://',variables('kubernetesAPIServerIP'),':443\n    KUBELET_IMAGE=',variables('kubernetesHyperkubeSpec'),'\n    KUBELET_NETWORK_PLUGIN=kubenet\n    KUBELET_MAX_PODS=110\n    DOCKER_OPTS=\n    CUSTOM_CMD=/bin/true\n    KUBELET_REGISTER_SCHEDULABLE=true\n    KUBELET_NODE_LABELS=role=agent,agentpool=agentpool1\n    KUBELET_POD_INFRA_CONTAINER_IMAGE=',variables('kubernetesPodInfraContainerSpec'),'\n    KUBELET_NODE_STATUS_UPDATE_FREQUENCY=',variables('kubernetesNodeStatusUpdateFrequency'),'\n    KUBE_CTRL_MGR_NODE_MONITOR_GRACE_PERIOD=',variables('kubernetesCtrlMgrNodeMonitorGracePeriod'),'\n    KUBE_CTRL_MGR_POD_EVICTION_TIMEOUT=',variables('kubernetesCtrlMgrPodEvictionTimeout'),'\n    KUBE_CTRL_MGR_ROUTE_RECONCILIATION_PERIOD=',variables('kubernetesCtrlMgrRouteReconciliationPeriod'),'\n\n    KUBELET_FEATURE_GATES=--feature-gates=Accelerators=true\n\n\n- path: \"/etc/systemd/system/kubelet.service\"\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/5RVb2/bthN+r09BpH3x+72g1aTB1rnQCzdRMiOpk1kyuiENBFo6S1woUuMd7XprvvtAWUks2xk2GDDI557njveH4t1MS7oPzgFzKxuSRkdXbg4KKJjCH05awKgw+QPYAYJdyhyC0YLA7oLBXbJZ3QdTQBKWIqFWYo1BrJfSGl2DpgupIAqB8rCAhXCKwocuVuLyHBDjb5ISEuQwOj59H8TfIE+8r1sLUTiXOpwLrFhoGgrFn85CmBtNQmqw+ORqgNUBXf1QSMt4w8KlsKGS8+fIr8TgOTuSC3bH3v6vNk4T+85KCw37erTr4esR+85WOePq/4wrYO/YPfvIqALNNqFbOedzqYu98PvAR7aQR4cy6NzU4gE4VsLCvrfgDUsriUwiE6wRlqRQbGXsg7DG6YKRYeTtrkGyIGrmW201EHgNOhgGbxiriBochmEpqXLzQW7q1v+Gt71sJRieHv90/MObdpOb2veZvz8+OT358OP7451E0GeCa8xJMb5iGmggm+XpgPIms0BWAp5EH/oivlHBnMRcATJOTAtfCSWRDlJl88/UKHRo26JuhphZp9nXgDHONVBUGaRu28iit7VyKRWUUHSArbvF0ihXQxQWsBz6vx0Y1zhs/6zZsfgOWqeHzwu7OsDwPd6cNRzuAK8LuqHYUnTIsBufAzJTDp8Xe479xd1q/3AH2E8O7bIv6ANe8Pb85uwqnmY3t2lyIByiCnOwhMP+9pWUV0KUoCn8LLQooRgXoEnSmidAJHWJw3/P7JJh7O1fV7NP8XWcZuPPo8v4sYMZC6t1A9anw54u75PJn81judELWe635MXWk9jNF5e/Ym5MwaVeWMGfP3tc1qKE6OjlkLc359l4cjEdZWc3k3Q0nsTT7uBHPWeiKCwgRu8G7a9vU8qstqY9IuugxwDtbxj3X3+whywFzF1ZSl3ySuhCgcW9VGqh5QKQeCOo2puuJ2tflyuHBJYXGqOXnM+uZ0kaT7PzSfJ4mG5qIXXUbQfK5EL1iNoUwJWYg8LtYk5uzuPsevQpvk52ypcr4wreWLOUBdiofY0OEJ4GYCe5lj74HY3u193DW821UEoku/6PbiohbSM1r00BUWNNLTF3xiGfW1mU/WNqIP9A8Ea5Uuqtmk7i9MvN9Cq7vZ5djif9stbim+/gdgs+j371o7dT/7as2D7o3DWFIOALP+Sg83W0U+YkHaWzJJvdno/SOLuYxr/M4snZb32Hy+hk60JexKN0No2zy1Ea9yK/UKbx5bidDR/j8ZDhyzj9OfMXJU0eg+BurJGEUvfBF6EJik/rqHaKJHcIdkDClkDB3wEAAP//UDkP9jUJAAA=\n\n- path: \"/opt/azure/containers/kubelet.sh\"\n  permissions: \"0755\"\n  owner: \"root\"\n  content: |\n    #!/bin/bash\n\n\n\n    exit 0\n\n- path: \"/opt/azure/containers/provision.sh\"\n  permissions: \"0744\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    ',variables('provisionScript'),'\n\nruncmd:\n- apt-get update\n- apt-get install -y apt-transport-https ca-certificates nfs-common\n- systemctl enable rpcbind\n- systemctl enable rpc-statd\n- systemctl start rpcbind\n- systemctl start rpc-statd\n- for i in 1 2 3 4 5; do curl --max-time 60 -fsSL https://aptdocker.azureedge.net/gpg | apt-key add -; [ $? -eq 0 ] && break || sleep 5; done\n- echo \"deb ',variables('dockerEngineDownloadRepo'),' ubuntu-xenial main\" | sudo tee /etc/apt/sources.list.d/docker.list\n- \"echo \\\"Package: docker-engine\\nPin: version ',variables('dockerEngineVersion'),'\\nPin-Priority: 550\\n\\\" > /etc/apt/preferences.d/docker.pref\"\n- apt-get update\n- apt-get install -y ebtables\n- apt-get install -y docker-engine\n- systemctl restart docker\n- mkdir -p /etc/kubernetes/manifests\n- usermod -aG docker ',variables('username'),'\n- /usr/lib/apt/apt.systemd.daily\n- mkdir -p /opt/azure/containers && touch /opt/azure/containers/runcmd.complete\n'))]",
           "linuxConfiguration": {
-            "disablePasswordAuthentication": "true",
+            "disablePasswordAuthentication": "false",
             "ssh": {
               "publicKeys": [
                 {
@@ -1232,6 +1677,7 @@
       "tags": {
         "creationSource": "[concat('acsengine-', variables('agentpool1VMNamePrefix'), copyIndex(variables('agentpool1Offset')))]",
         "orchestrator": "[variables('orchestratorNameVersionTag')]",
+        "poolName": "agentpool1",
         "resourceNameSuffix": "[variables('nameSuffix')]"
       },
       "type": "Microsoft.Compute/virtualMachines"
@@ -1250,12 +1696,12 @@
       "properties": {
         "autoUpgradeMinorVersion": true,
         "protectedSettings": {
-          "commandToExecute": "[concat('/usr/bin/nohup /bin/bash -c \"/bin/bash /opt/azure/containers/provision.sh ',variables('tenantID'),' ',variables('subscriptionId'),' ',variables('resourceGroup'),' ',variables('location'),' ',variables('subnetName'),' ',variables('nsgName'),' ',variables('virtualNetworkName'),' ',variables('routeTableName'),' ',variables('primaryAvailablitySetName'),' ',variables('servicePrincipalClientId'),' ',variables('servicePrincipalClientSecret'),' ',variables('clientPrivateKey'),' ',variables('targetEnvironment'),' ',variables('networkPolicy'),' >> /var/log/azure/cluster-provision.log 2>&1 &\" &')]"
+          "commandToExecute": "[concat('/usr/bin/nohup /bin/bash -c \"/bin/bash /opt/azure/containers/provision.sh ',variables('tenantID'),' ',variables('subscriptionId'),' ',variables('resourceGroup'),' ',variables('location'),' ',variables('subnetName'),' ',variables('nsgName'),' ',variables('virtualNetworkName'),' ',variables('routeTableName'),' ',variables('primaryAvailabilitySetName'),' ',variables('servicePrincipalClientId'),' ',variables('servicePrincipalClientSecret'),' ',variables('clientPrivateKey'),' ',variables('targetEnvironment'),' ',variables('networkPolicy'),' ',variables('maxPods'),' ',variables('cloudProviderBackoff'),' ',variables('cloudProviderBackoffRetries'),' ',variables('cloudProviderBackoffExponent'),' ',variables('cloudProviderBackoffDuration'),' ',variables('cloudProviderBackoffJitter'),' ',variables('cloudProviderRatelimit'),' ',variables('cloudProviderRatelimitQPS'),' ',variables('cloudProviderRatelimitBucket'),' ', variables('useManagedIdentityExtension'),' ',variables('useInstanceMetadata'),' >> /var/log/azure/cluster-provision.log 2>&1 &\" &')]"
         },
-        "publisher": "Microsoft.OSTCExtensions",
+        "publisher": "Microsoft.Azure.Extensions",
         "settings": {},
-        "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.0"
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0"
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     },
@@ -1342,19 +1788,49 @@
               "sourceAddressPrefix": "*",
               "sourcePortRange": "*"
             }
+          },
+          {
+            "name": "AllowAllInbound",
+            "properties": {
+              "access": "Allow",
+              "description": "Allow All Inbound",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "*",
+              "direction": "Inbound",
+              "priority": 200,
+              "protocol": "*",
+              "provisioningState": "Succeeded",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "AllowAllOutbound",
+            "properties": {
+              "access": "Allow",
+              "description": "Allow All Outbound",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "*",
+              "direction": "Outbound",
+              "priority": 200,
+              "protocol": "*",
+              "provisioningState": "Succeeded",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*"
+            }
           }
         ]
       },
       "type": "Microsoft.Network/networkSecurityGroups"
     },
     {
-      "apiVersion": "[variables('apiVersionDefault')]",
+      "apiVersion": "[variables('apiVersionNetworking')]",
       "location": "[variables('location')]",
       "name": "[variables('routeTableName')]",
       "type": "Microsoft.Network/routeTables"
     },
     {
-      "apiVersion": "[variables('apiVersionDefault')]",
+      "apiVersion": "[variables('apiVersionNetworking')]",
       "dependsOn": [
         "[concat('Microsoft.Network/publicIPAddresses/', variables('masterPublicIPAddressName'))]"
       ],
@@ -1413,64 +1889,7 @@
       "type": "Microsoft.Network/loadBalancers"
     },
     {
-      "apiVersion": "[variables('apiVersionDefault')]",
-      "dependsOn": [
-        "[variables('vnetID')]"
-      ],
-      "location": "[variables('location')]",
-      "name": "[variables('masterInternalLbName')]",
-      "properties": {
-        "backendAddressPools": [
-          {
-            "name": "[variables('masterLbBackendPoolName')]"
-          }
-        ],
-        "frontendIPConfigurations": [
-          {
-            "name": "[variables('masterInternalLbIPConfigName')]",
-            "properties": {
-              "privateIPAddress": "[variables('masterInternalLbIp')]",
-              "privateIPAllocationMethod": "Static",
-              "subnet": {
-                "id": "[variables('vnetSubnetID')]"
-              }
-            }
-          }
-        ],
-        "loadBalancingRules": [
-          {
-            "name": "InternalLBRuleHTTPS",
-            "properties": {
-              "backendAddressPool": {
-                "id": "[concat(variables('masterInternalLbID'), '/backendAddressPools/', variables('masterLbBackendPoolName'))]"
-              },
-              "backendPort": 4443,
-              "enableFloatingIP": false,
-              "frontendIPConfiguration": {
-                "id": "[variables('masterInternalLbIPConfigID')]"
-              },
-              "frontendPort": 443,
-              "idleTimeoutInMinutes": 5,
-              "protocol": "tcp"
-            }
-          }
-        ],
-        "probes": [
-          {
-            "name": "tcpHTTPSProbe",
-            "properties": {
-              "intervalInSeconds": "5",
-              "numberOfProbes": "2",
-              "port": 4443,
-              "protocol": "tcp"
-            }
-          }
-        ]
-      },
-      "type": "Microsoft.Network/loadBalancers"
-    },
-    {
-      "apiVersion": "[variables('apiVersionDefault')]",
+      "apiVersion": "[variables('apiVersionNetworking')]",
       "location": "[variables('location')]",
       "name": "[variables('masterPublicIPAddressName')]",
       "properties": {
@@ -1482,23 +1901,23 @@
       "type": "Microsoft.Network/publicIPAddresses"
     },
     {
-      "apiVersion": "[variables('apiVersionDefault')]",
+      "apiVersion": "[variables('apiVersionNetworking')]",
       "copy": {
-        "count": "[variables('masterCount')]",
+        "count": "[sub(variables('masterCount'), variables('masterOffset'))]",
         "name": "masterLbLoopNode"
       },
       "dependsOn": [
         "[variables('masterLbID')]"
       ],
       "location": "[variables('location')]",
-      "name": "[concat(variables('masterLbName'), '/', 'SSH-', variables('masterVMNamePrefix'), copyIndex())]",
+      "name": "[concat(variables('masterLbName'), '/', 'SSH-', variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')))]",
       "properties": {
         "backendPort": 22,
         "enableFloatingIP": false,
         "frontendIPConfiguration": {
           "id": "[variables('masterLbIPConfigID')]"
         },
-        "frontendPort": "[variables('sshNatPorts')[copyIndex()]]",
+        "frontendPort": "[variables('sshNatPorts')[copyIndex(variables('masterOffset'))]]",
         "protocol": "tcp"
       },
       "type": "Microsoft.Network/loadBalancers/inboundNatRules"
@@ -1506,16 +1925,15 @@
     {
       "apiVersion": "[variables('apiVersionDefault')]",
       "copy": {
-        "count": "[variables('masterCount')]",
+        "count": "[sub(variables('masterCount'), variables('masterOffset'))]",
         "name": "nicLoopNode"
       },
       "dependsOn": [
         "[variables('vnetID')]",
-        "[concat(variables('masterLbID'),'/inboundNatRules/SSH-',variables('masterVMNamePrefix'),copyIndex())]",
-        "[variables('masterInternalLbName')]"
+        "[concat(variables('masterLbID'),'/inboundNatRules/SSH-',variables('masterVMNamePrefix'),copyIndex(variables('masterOffset')))]"
       ],
       "location": "[variables('location')]",
-      "name": "[concat(variables('masterVMNamePrefix'), 'nic-', copyIndex())]",
+      "name": "[concat(variables('masterVMNamePrefix'), 'nic-', copyIndex(variables('masterOffset')))]",
       "properties": {
         "enableIPForwarding": true,
         "ipConfigurations": [
@@ -1525,18 +1943,15 @@
               "loadBalancerBackendAddressPools": [
                 {
                   "id": "[concat(variables('masterLbID'), '/backendAddressPools/', variables('masterLbBackendPoolName'))]"
-                },
-                {
-                  "id": "[concat(variables('masterInternalLbID'), '/backendAddressPools/', variables('masterLbBackendPoolName'))]"
                 }
               ],
               "loadBalancerInboundNatRules": [
                 {
-                  "id": "[concat(variables('masterLbID'),'/inboundNatRules/SSH-',variables('masterVMNamePrefix'),copyIndex())]"
+                  "id": "[concat(variables('masterLbID'),'/inboundNatRules/SSH-',variables('masterVMNamePrefix'),copyIndex(variables('masterOffset')))]"
                 }
               ],
               "primary": true,
-              "privateIPAddress": "[concat(variables('masterFirstAddrPrefix'), copyIndex(int(variables('masterFirstAddrOctet4'))))]",
+              "privateIPAddress": "[variables('masterPrivateIpAddrs')[copyIndex(variables('masterOffset'))]]",
               "privateIPAllocationMethod": "Static",
               "subnet": {
                 "id": "[variables('vnetSubnetID')]"
@@ -1550,16 +1965,16 @@
     {
       "apiVersion": "[variables('apiVersionDefault')]",
       "copy": {
-        "count": "[variables('masterCount')]",
+        "count": "[sub(variables('masterCount'), variables('masterOffset'))]",
         "name": "vmLoopNode"
       },
       "dependsOn": [
-        "[concat('Microsoft.Network/networkInterfaces/', variables('masterVMNamePrefix'), 'nic-', copyIndex())]",
+        "[concat('Microsoft.Network/networkInterfaces/', variables('masterVMNamePrefix'), 'nic-', copyIndex(variables('masterOffset')))]",
         "[concat('Microsoft.Compute/availabilitySets/',variables('masterAvailabilitySet'))]",
         "[variables('masterStorageAccountName')]"
       ],
       "location": "[variables('location')]",
-      "name": "[concat(variables('masterVMNamePrefix'), copyIndex())]",
+      "name": "[concat(variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')))]",
       "properties": {
         "availabilitySet": {
           "id": "[resourceId('Microsoft.Compute/availabilitySets',variables('masterAvailabilitySet'))]"
@@ -1570,16 +1985,17 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(variables('masterVMNamePrefix'),'nic-', copyIndex()))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(variables('masterVMNamePrefix'),'nic-', copyIndex(variables('masterOffset'))))]"
             }
           ]
         },
         "osProfile": {
+          "adminPassword": "!!123abc!!123abc",
           "adminUsername": "[variables('username')]",
-          "computername": "[concat(variables('masterVMNamePrefix'), copyIndex())]",
-          "customData": "[base64(concat('#cloud-config\n\npackages:\n - etcd\n - jq\n - traceroute\n\ndisk_setup:\n  /dev/sdc:\n      table_type: gpt\n      layout: true\n      overwrite: true\n\nfs_setup:\n- label: etcd_disk\n  filesystem: ext4\n  device: /dev/sdc1\n  extra_opts:\n    - \"-F\"\n    - \"-E\"\n    - \"lazy_itable_init=1,lazy_journal_init=1\"\n\nmounts:\n- - /dev/sdc1\n  - /var/lib/etcddisk\n\nwrite_files:\n- path: \"/etc/systemd/system/docker.service.d/clear_mount_propagation_flags.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    MountFlags=shared\n\n- path: \"/etc/systemd/system/docker.service.d/exec_start.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    ExecStart=\n    ExecStart=/usr/bin/docker daemon -H fd:// --storage-driver=overlay --log-driver=journald\n\n- path: \"/etc/systemd/journald.conf.d/kubernetes.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Journal]\n    Storage=persistent\n    ForwardToSyslog=no\n    MaxLevelConsole=warning\n    RateLimitInterval=1s\n    RateLimitBurst=20000\n  \n- path: \"/etc/docker/daemon.json\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    {\n      \"live-restore\": true\n    }\n\n- path: \"/etc/kubernetes/certs/ca.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('caCertificate'),'\n\n- path: \"/etc/kubernetes/certs/apiserver.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('apiServerCertificate'),'\n\n- path: \"/etc/kubernetes/certs/client.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('clientCertificate'),'\n\n- path: \"/var/lib/kubelet/kubeconfig\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    apiVersion: v1\n    kind: Config\n    clusters:\n    - name: localcluster\n      cluster:\n        certificate-authority: /etc/kubernetes/certs/ca.crt\n        server: ',concat('https://', variables('masterPrivateIpAddrs')[copyIndex()], ':443'),'\n    users:\n    - name: client\n      user:\n        client-certificate: /etc/kubernetes/certs/client.crt\n        client-key: /etc/kubernetes/certs/client.key\n    contexts:\n    - context:\n        cluster: localcluster\n        user: client\n      name: localclustercontext\n    current-context: localclustercontext\n\n- path: /etc/kubernetes/manifests/kube-apiserver.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/6SUX08bOxDF3/MprH2OWeAiXbRika64lYpEEQWp7xN7krjxv47Hi9JPX3mzCbAbaKUmT+vj+c3ZM15DNN+Qkgm+EVV3Vs02xutGVA9BVzOHDBoYmpkQHhw2otrkBUqIJiF1SNUgpAjqoKZtYnRFsrBAm0q1EGyQGqGCZwpWRgse+3UVXAwePTfiLXuWIqpSuw6J75GfA20awZRLXeGA8UgDXb7vr/yMg1VRr4pMHhnT521EKo9PEdX1fqMKzkEJYHgu5Kpe7/dWr5cnXfpVKUE7k0qicnjb9n4f0Z1Zotoqi/M74ww/gl8hzZ+QOqPwP6VC9jz/H5eQLT9xIFjhjYWU5o+YQiaFX3NgmPTThCm1pyf9f6xaG55lJNMZiyvUI9n4hCoTyhiI28vTy3H9a/ni4p+RqmzIWkYKndFILfzMhEe3qOCXZtXWyKp+GULdF5x8T8FP2vaZSGVzYiRpoqSSVtuPcEjsxmi6HhUiKy13c0ntmjk2dX12/m+fzVlz5aDgPrHSN9ag54dAfBTxIwfKThKCbsuhm4TeIbFJeIh/QN96RvJg7xa3cQxmm6RCYrk0FidZFCXVh1N1ooiP1JdJAqPc4PbPMBvcTiZS3lwq+Aig4IiB/VRgd1T/xkTaHW+5ALVBr9sS+vloT9de7Fe6YLPDL6Xr8Mm/+eyRlXxp/4IRwpWSB+B1I6qRy2rK6YCkNYueZZHfBXVAtTWL+tW+ncPxfXTcWLnSetSBHz9w+Dt379MmNn8FAAD//wnXuT3vBQAA\n\n- path: /etc/kubernetes/manifests/kube-controller-manager.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/4yTQY/TQAyF7/0Vo9wnaVcrDlGzFyTEhVUlJO7uxG2HzowHjxMovx65pFtItwu9jf3e51fLgey/IBdPqTXVuKoWR5/61lQb6qtFRIEeBNqFMQkitqY6Dlu0jpIwhYBsIyTYI1eTomRwL7JyKoJRWwG2GIpijBGP3JoJYXOAhOe6o5gpYZLW3BmyKBmdQg5U5BnlO/GxNcKDAlQOPiFPY+x/JNafj7BX2Vp1nFCwfDxlZH1+zuieLkJHMYLuZnrriKo5XLTVn+X7485ta9XhKO38vmtG4Cb4baO1gNJcezMThEAOBG2iHq3zPZdufSk+U4/vtfQ0c7kwFEE+67vVsn54fKyX9bJZvbsj1L116wj6+PCtTxvGnf9xi6Wht5lp9D1yBz8Hxlcll7+J4prrjpuzof5aKM1cTCTWgd35gDcuhyylcVA7lpmvII/eoQXnaEhiM/tRl3XE01ssyF6dyPURTzNkQOiRLQZ00umdzfpj93CpjBSGiJ90cvnrRKYrRHH2OvvKMSaqZwNyaE01i1jdckZgG/zWTsdyFzQ7KtX9jjj/PF4Ppl/YGfXCz28k/Fe6+7SbmL8CAAD//0fO1EGQBAAA\n\n- path: /etc/kubernetes/manifests/kube-scheduler.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/4SRzU7DMBCE73mKle9WBEeLcuYCqoTEfeMsjVX/yd4E9e3RtmlTQgu+eWfmy2yM2X1QqS5FA2p6UM3exd6A2qZeNYEYe2Q0DUDEQAbUfuxIVztQP3oqahZqRruoh8oURPLYka+SBmBHxYBNkUvyOnuMdJzbFHKKFNnAT3ZTM1nJDqnyG/FXKnsDXEbJCQddpDLT9f1+clzAnahPIpdITPXlkKnI9T2TfT4bbQoBY2/mq4BVO5yt6nr86yPHqdZitCl+ut2mnbC03nWtzDxxu2irkCfsqWjyZHkjO670afN4nkzJj4Fe0xi5XvecfwCx1cuWCwYgSGSLPBhQLbFtb9kunAmL9q7Tc/W7oNWK4js1XL/M7WLyuEfUhZ//aPhfu/u0GzVPp/kOAAD///HHGWACAwAA\n\n- path: /etc/kubernetes/manifests/kube-addon-manager.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/3yQzU7DMAzH730Ka/eqcNglQkg8QGESEneTWFvUJQ6xU9S3R+kX22XH2L//h4PJf1EWz9HA+NwMPjoDJ3ZNIEWHiqYBiBjIwFC+qUXnOLYBI54prytJaLe9TKIUGoDxxlUS2epzYdF30l/OgwHNhRoAy1HRR8pSifZRFoAPeCYDL3WdIynJW2X6BflMZF9nLpNwyZZmz2XwU0h0fwPYVAwcw/4OFDhPBo5PvZ+HI19LoJ5L3GRbubmXrMpQgRPqxcChI7Xdf7duAQ97B3Qf8Trtpy8Jd3ffWNfPmn1XeXqY8RcAAP//D9wkjsgBAAA=\n\n- path: /etc/kubernetes/addons/kube-dns-service.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/3xQwUoDMRC95yuG3lO7iCBztRcRpFD1ns2+Q9hsEjKTgn8vcbugoCWXvDfvvXmMK+EDVUJOTJfBzCFNTGfUS/AwC9RNTh0bouhGROk/ovlRrCuFaW4j7JRkZduImqCQfch3PjZRVCtrFtNOa8PuD2VyC5he2ojj69kQrfhHdCekOL+x8imKxUiB732um55PTMNh399wMEQlV/3ua6+JW88+YHq4X0HNmn2OTO/H02+xVV9uGd6eukEQ4TXX/y7zFQAA//8ZlC5KYQEAAA==\n\n- path: /etc/kubernetes/addons/kube-dns-deployment.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/8xW32/bNhB+919x0F4nRW6RNSPmAkNSrMDQzpizvcx7oMlLRIQiGd7RiDvsfx8kOxatOplTDEP5ZNzPz/fdfZAM5neMZLwTsJ5O7ozTAn7FYI2SbLy79I6jtxbjpEWWWrIUEwArV2ip+wVwl1YYHTJSZfyZsokYY0kY10ahgIJjwmIbeUGlDEH0KaV21FvXQ//vJwBOtjhElIORglSPHtoQYzuhgKoDEbeAScCrCQChRcU+itObMrbBSsZtSv5Puyed89yPgx5NAKQa1MlirKQNjaxGY4iGjZK2DF4LKIoT09hbjLtOUPzx17K4w82yEMviclfwR629o1+c3SyLb5eFD128j33MuwdDTMvi7z8f++U8PT2Ml7F4ZHwAj0x0T3nH0jiM+8YlyHibwSihKEvtW2ncbNeqsl5JWxWjGEdl8JFn07o+fz04TStvUcAPA+qf0wqvPi4WAdXbfZg1a3RINI9+hUN7gBtpbIp43USkxlst4DzzNszhJ+Q8ASBIbgQUZw1Ky82nsmutHRWHQT6ygIv6oj4wd6R3W/3++nqeOYwzbKS9Qis3C1TeaRLwXZ5KSSkkynBOMy+bFn3iferwH4Yjyjnu0B2wsGdq3uPuh5zV31bpOOjJyTwhevbKWwG/Xc2/pCCr8EzR68uhaESpzVESn6Vpn/YEQdMvJuh1fRIFEcmnqJByfNa0hukQcYutjxsB0zf1B5N5It4npHG0Cqmfa3u0Rlbi6M0pqRosyXzC7qLq0bU5X3ao7Xpk71QA42z66k1VV3U1/WZ0jX2Q9bfljVTGGt7MyudO9erj4oOk+8NT3a9GK+n+5I09vl0vX9Snt/Rf9vP4lFs9c2S9v0shF1aNNzJZrmitqgPZg/1o4e2ZxvWZS9aO5puine3FZzen4j/rK3pKT+z+mfT1Ib1Od9I3st8ng/zcPrx7QPV+W/r/k+/PJghfnXzvoJ58DCPcT8npC2Xp/AWqdFyUsgra0dxbozYCrrZLuXM4r3Fx8N3WvRXy+AvJkwBrXHr4JwAA//+O/Dp4ugoAAA==\n\n- path: /etc/kubernetes/addons/kube-proxy-daemonset.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/5RUO4/bPBDs/SsW6nk8t8L3pUmKNHkABtLT1JxNmA+Fu3Tsfx9Qii3pHspFFTG7nJ2dsWl69wOZXYot4SKI9cj6vN1DzHZzcrFr6ZNBSHEH2QSI6YyYdkPkzR6e64noVPbIEQJ+cElbX1iQFSOfnUVLjeSCZui0KfQpIko7XFJ9TpfrUBGH3FJMHTZE0QQ866gQ98becL6yIGy4h60iBKH3RjAKmgut31zsuowXUohuI8aLUYyLyHcyVcmCid3ErqjRx2uPXLmbGbwco6hRqrbYFJ/c4X99Nll7t9cV8xA91SYSF8yhWvrf5Pnn26hdD/than3FxPHL4FSyxcyQCv4sYFlgRLYvLW0fH8MdZdiSnVw/pii4yLy9z+7sPA7oWqqR30vn5EvAl1TinF9RqMh3I8eWGg2xmtlriyzczGjHPZi9GkrqmFgWwk33Lfrrs5mvsE+WvaSHWDXV/5n+PdHNExlrfxtTN/0K+ZXyaYGPfs5+grVxkDJP44+0wlnz0WRoawYH3ZOzZmHCisPr3O9Z+42l14nfimslrPp/3cHDSsoTZX3IHpbvU+KWvIvl8jsAAP//tEWDlf4EAAA=\n\n- path: /etc/kubernetes/addons/kubernetes-dashboard-deployment.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/4SST2vbQBDF7/oUg++KY3ppllIoNfTSg8Cl99HqES+Z/cPOyI2+fRFxLAlCPKfhzdPTT6PhEv6iasjJEV4NaW51fzn0MD40LyENjo4okqeIZE2E8cDGriES7iE6d0QvY4+aYNCHkPdeRjXUVlEvwcPRzuqI3Zvzq7Zcils90g6s5z5zHRqixBGfDrWwvzpandQQGy3wM0dFkeBZHR0aIoXAW65vhJHNn3+vkO+jGGIRNlwDVp8+l2yy7qcRvWPO5XMyDgn1ltAS12d1dAsMkZ/h6NuSd3yPOxX471tjN4p0WYKfHP2QfzzpbS7hggTVruYeCzDR2az8gq0losJ2drTb77Zqrubo6fHpcSWHFCywHCE8neBzGtTRl7XDQkQe7aPhpz96eelqw+2yte4jnFKzZZ/F0Z+f3VVPecBpcwhzzdf9sL3ZrI4kpPGVmv8BAAD//yF1c5kVAwAA\n\n- path: /etc/kubernetes/addons/kubernetes-dashboard-service.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/4yOsU4EMQxE+3yFdX3g6O78EQgJid6bjCC63SSyvSfd36NkKagQ3Wg843nSywfUSqtM95dwKzUzvUPvJSFscMniwoFolQWrDUV02xdohcOeSntO624OjXa0mE6uO05H8mJReudflZjFvpYmmgNRlQ1/Hq1L+klEe5hjC9aRBkdv6hMoTsl0Oc9NF/2Ev03rer4O07AieVP+F5Q/OpheW8Z4Er4DAAD//6UyTnEjAQAA\n\n- path: /etc/kubernetes/addons/kube-heapster-service.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/2yOvWrEMBCEez3F4l75q4yeIGUgkH4tD4mwLIndtSFvf8h2cQfXDcN++w239APRVEug/d0tqcyBviF7inArjGc2Do4o84SsPREt2wQpMOhLqq8xb2oQrycVaDDZMDy5LLwi0Ce4dcARncXfY6GN+5eOev1Xw+q0IXZ1q2LHBn/EQOPboTGWX9jXVY0fjkiREa3KtXhUz63duW4BAAD//6ozJXX5AAAA\n\n- path: /etc/kubernetes/addons/kube-heapster-deployment.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/6xUXWvbShB9169Y9HxXse9NIHe5uhCSlD40TUigUKpiJqtJtXi/ujsyVkv/e5Es2bJihxCqJ3Nm5pzx2bPLOU+WypaCXaHXrjFoKYkepUgYC+i1khAFmyeMERqvgbCtMDb0tJ90lkBZDHFAOFMGvqFg/y3rRwwWCeN7BB8Jw4NH+X/f184aA7YUW4Cz9KTqW9Mxynl0dZCY7yizWBsDoVmAV6JIi3Q3YMGgYAPRFg64IYk7wRb8XmOkPYwx6WvBzmdmDzRoXGgEm5/ObtSoopVRbyY45NZFWTp7j1H9eJVj3pULC9Y2E8ukr/PzmZmguKYAXW2WnU2Lmw3zbsGDc33D6bMyVQFj5XSZn00q5TZc+XAkfDXP/s5m/BEJsvl07SFR+ZEoeKc19xiUK/N/Zu03XTWSMkAu5Lj2zqIlBfpYPHhn3ZtDcnbkjP99ZUZeNY92NT7yFega3wVn9vmeFOryHp/20R6/A6oEM0hQAkHWejBq21hy83lxd3u1+Hhxc/3n1aIH+aLkw93F5aBrXYkPqFGSCzuBLi6jF0C5ExcF08rW62Rj3kZwGNHwiHrk+vI8cvD+wNuwwhCVs4JtktnjYK0jIOXsiCTKCstaY8hA+2q6kAyKlATNvSsFGz1KL4+R0xh6JZZ++VmkS2yKVBTpZU/YPQrx1uqmSP8qUufbfhe6nuu1ihSL9NfXVi/uGWeAZPVhz4hjNkxNAK8+DRCuCW37M56s5u1BzJOx22OnD9Mfcnhina67CxkxrJREwVIKNbb/aJsf0Y3w2ERCkzy7yj118jsAAP//Os2RQNoGAAA=\n\n- path: /etc/kubernetes/addons/default-storage-class.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/1zPMU4EMQyF4T6nsLZP0HYoLUdAovdMHshKNlnZzhScHmUZkKB++f7IMcbAd3mDmoyeyXwofyDVZ0syno7rBudrqNJLptfv8aWxWbjBubBzDkSdb8hU8M6zeSDi3oezy+i2ZvrJ7kumlUx1btAOx+MfsXjq+HiT6eI6cQlEjTe0M/MX7W2aQ6NBD9nxa+46DlnnQPM/wp9TEYtYDV8BAAD//2p7hGT6AAAA\n\n- path: \"/etc/systemd/system/kubectl-extract.service\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Unit]\n    Description=Kubectl extraction\n    Requires=docker.service\n    After=docker.service\n    ConditionPathExists=!/usr/local/bin/kubectl\n\n    [Service]\n    TimeoutStartSec=0\n    Restart=on-failure\n    RestartSec=5s\n    ExecStartPre=/bin/mkdir -p /tmp/kubectldir\n    ExecStartPre=/usr/bin/docker pull ',variables('kubernetesHyperkubeSpec'),'\n    ExecStartPre=/usr/bin/docker run --rm -v /tmp/kubectldir:/opt/kubectldir ',variables('kubernetesHyperkubeSpec'),' /bin/bash -c \"cp /hyperkube /opt/kubectldir/\"\n    ExecStartPre=/bin/mv /tmp/kubectldir/hyperkube /usr/local/bin/kubectl\n    ExecStart=/bin/chmod a+x /usr/local/bin/kubectl\n\n    [Install]\n    WantedBy=multi-user.target\n\n- path: \"/etc/default/kubelet\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    KUBELET_CLUSTER_DNS=',variables('kubeDnsServiceIP'),'\n    KUBELET_API_SERVERS=',concat('https://', variables('masterPrivateIpAddrs')[copyIndex()], ':443'),'\n    KUBELET_IMAGE=',variables('kubernetesHyperkubeSpec'),'\n    KUBELET_NETWORK_PLUGIN=\n    DOCKER_OPTS=\n    KUBELET_REGISTER_SCHEDULABLE=',variables('registerSchedulable'),'\n    KUBELET_NODE_LABELS=role=master,failure-domain.beta.kubernetes.io/region=',variables('location'),'\n    KUBELET_POD_INFRA_CONTAINER_IMAGE=',variables('kubernetesPodInfraContainerSpec'),'\n\n- path: \"/etc/systemd/system/kubelet.service\"\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/5RV32/iOBB+z19hoT7sSmuy9+OJVR5oSXuoLFSkvZWurZCTDIkPx87N2LD0tv/7KSEUEuidTkiRPTPf93l+2Dw+aGmfvRFQgrK00ujg1sWgwHpz+MtJBApSk6wA+wS4lgl4w6UF7Bq9x2i3evbmQFagDYTaiC15oV5LNLoAba+lgsAHm/gpLIVT1l81WpFLEiAKv0sbWWEdBT/9+osXfockqrjuEAI/ltqPBeXMN6X1xYtD8BOjrZAakPZUfcrP4IpVKpHxkvlrgb6S8ZvyOxo8YT25ZI/s4kNhnLbsB8sQSvbU6zI89dgPtkkYVx8ZV8A+s2f2hdkcNNtJ13DOY6nTE/lTwxe2lL1zGTQ0hVgBp1wgnLK1YdynCgixFbECYtwyLSoKJel8qCz/O7RdonpHW7JQJFYxAsvh0G92+3AZTsL7xfUouPhQxybCsnoCqiOjBgvkL9OP5zL+vyK/f43Gf4T/JrQuSL7AsVjgO8I6fjfPDJ1mTx5jnGuwQW7INttSpq0tyrVUkEHaGLBoFmujXAGBn8J6UH06ZtrSoP6g6XiqZqLTg7cFbs5EVO3endUfdAzvA5r5OEI0lkEzSWdgJhu8LU6IO4UddAynyRGu24C2oQJcjGZXt+F8Mbu7j2o0Yxd/75s7/jq8CV8bM2N+vi0BKzzbX5y9q1KtbInRS5md1uDga0Fw99rxd9ylSbnUSxT87cnhshAZBL3DIe9mo8V4ej0fLq5m0/vheBrOm4P3WmQiTRGIgs/9+tf2KWU2R+MVWHTQigBdXVJevbyA5zwpxC7LpM54LnSqAOkklUJouQSyvBQ2P2nn3tvGJcqRBeSppuCQ89XkIboP54vRNHo9H24KIXXQbPvKJEJ1Kp/JOpKSHFKnqhyOBObhzbhWiK5+C0cPk+HlJGwraZMCVyIGRcfdmM5G4WIyvAwn0eunGKzoH1LsS+NLTVboBLjdlseCu3fk9dNSSOUQmgT6ZxhejD4GXo+6fa7+o44GZpcpbvl+Njt1r+P7f5LRLZpcSCyl5oVJISjRFJISZxzxGGWatYdDg90YXPFSuUzqo8NNw/tvs/nt4m7ycDOetgu4Dn72vMdxVQ+lnr1vQltIL7dB4ZSV3BFg3wrMwHr/BAAA//9jAs6PLwgAAA==\n\n- path: \"/opt/azure/containers/kubelet.sh\"\n  permissions: \"0755\"\n  owner: \"root\"\n  content: |\n    #!/bin/bash\n    set -e\n\n    # Azure does not support two LoadBalancers(LB) sharing the same nic and backend port.\n    # As a workaround, the Internal LB(ILB) listens for apiserver traffic on port 4443 and the External LB(ELB) on port 443\n    # This IPTable rule then redirects ILB traffic to port 443 in the prerouting chain\n    iptables -t nat -A PREROUTING -p tcp --dport 4443 -j REDIRECT --to-port 443\n\n    sed -i \"s|<kubernetesAddonManagerSpec>|',variables('kubernetesAddonManagerSpec'),'|g\" \"/etc/kubernetes/manifests/kube-addon-manager.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g; s|<kubeServiceCidr>|',variables('kubeServiceCidr'),'|g; s|<masterEtcdClientPort>|',variables('masterEtcdClientPort'),'|g; s|<masterInternalLbIp>|',variables('masterInternalLbIp'),'|g\" \"/etc/kubernetes/manifests/kube-apiserver.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g; s|<masterFqdnPrefix>|',variables('masterFqdnPrefix'),'|g; s|<allocateNodeCidrs>|',variables('allocateNodeCidrs'),'|g\" \"/etc/kubernetes/manifests/kube-controller-manager.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g\" \"/etc/kubernetes/manifests/kube-scheduler.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g\" \"/etc/kubernetes/addons/kube-proxy-daemonset.yaml\"\n    sed -i \"s|<kubernetesKubeDNSSpec>|',variables('kubernetesKubeDNSSpec'),'|g; s|<kubernetesDNSMasqSpec>|',variables('kubernetesDNSMasqSpec'),'|g; s|<kubernetesExecHealthzSpec>|',variables('kubernetesExecHealthzSpec'),'|g\" \"/etc/kubernetes/addons/kube-dns-deployment.yaml\"\n    sed -i \"s|<kubernetesHeapsterSpec>|',variables('kubernetesHeapsterSpec'),'|g; s|<kubernetesAddonResizerSpec>|',variables('kubernetesAddonResizerSpec'),'|g\" \"/etc/kubernetes/addons/kube-heapster-deployment.yaml\"\n    sed -i \"s|<kubernetesDashboardSpec>|',variables('kubernetesDashboardSpec'),'|g\" \"/etc/kubernetes/addons/kubernetes-dashboard-deployment.yaml\"\n\n    echo $(curl -f --retry 5 http://169.254.169.254/metadata/v1/InstanceInfo 2>/dev/null | jq -r .FD) > /etc/kubernetes/fd\n    echo \"',variables('masterVMSize'),'\" > /etc/kubernetes/vmsize\n\n- path: \"/opt/azure/containers/provision.sh\"\n  permissions: \"0744\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    ',variables('provisionScript'),'\n\nruncmd:\n- /bin/echo DAEMON_ARGS=--name \"',variables('masterVMNames')[copyIndex()],'\" --initial-advertise-peer-urls \"',variables('masterEtcdPeerURLs')[copyIndex()],'\" --listen-peer-urls \"',variables('masterEtcdPeerURLs')[copyIndex()],'\" --advertise-client-urls \"',variables('masterEtcdClientURLs')[copyIndex()],'\" --listen-client-urls \"',concat(variables('masterEtcdClientURLs')[copyIndex()], ',http://127.0.0.1:', variables('masterEtcdClientPort')),'\" --initial-cluster-token \"k8s-etcd-cluster\" --initial-cluster \"',variables('masterEtcdClusterStates')[div(variables('masterCount'), 2)],' --data-dir \"/var/lib/etcddisk\"\" --initial-cluster-state \"new\" | tee -a /etc/default/etcd\n- sudo /bin/chown -R etcd:etcd /var/lib/etcd/default\n- sudo /bin/chown -R etcd:etcd /var/lib/etcddisk\n- systemctl stop etcd\n- sudo -u etcd rm -rf /var/lib/etcd/default\n- systemctl restart etcd\n- for i in $(seq 1 20); do curl --max-time 60 http://127.0.0.1:2379/v2/machines; [ $? -eq 0 ] && break || sleep 5; done\n- apt-get update\n- apt-get install -y apt-transport-https ca-certificates\n- for i in 1 2 3 4 5; do curl --max-time 60 -fsSL https://aptdocker.azureedge.net/gpg | apt-key add -; [ $? -eq 0 ] && break || sleep 5; done\n- echo \"deb ',variables('dockerEngineDownloadRepo'),' ubuntu-xenial main\" | sudo tee /etc/apt/sources.list.d/docker.list\n- \"echo \\\"Package: docker-engine\\nPin: version ',variables('dockerEngineVersion'),'\\nPin-Priority: 550\\n\\\" > /etc/apt/preferences.d/docker.pref\"\n- apt-get update\n- apt-get install -y ebtables\n- apt-get install -y docker-engine\n- systemctl restart docker\n- mkdir -p /etc/kubernetes/manifests\n- usermod -aG docker ',variables('username'),'\n\n'))]",
+          "computername": "[concat(variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')))]",
+          "customData": "[base64(concat('#cloud-config\n\npackages:\n - etcd\n - jq\n - traceroute\n\nwrite_files:\n- path: \"/etc/kubernetes/azurestackcloud.json\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n   {\n      \"name\": \"',variables('cloudprofileName'),'\",\n      \"managementPortalURL\": \"',variables('cloudprofileManagementPortalURL'),'\",\n      \"publishSettingsURL\": \"',variables('cloudprofilePublishSettingsURL'),'\",\n      \"serviceManagementEndpoint\": \"',variables('cloudprofileServiceManagementEndpoint'),'\",\n      \"resourceManagerEndpoint\": \"',variables('cloudprofileResourceManagerEndpoint'),'\",\n      \"activeDirectoryEndpoint\": \"',variables('cloudprofileActiveDirectoryEndpoint'),'\",\n      \"galleryEndpoint\": \"',variables('cloudprofileGalleryEndpoint'),'\",\n      \"keyVaultEndpoint\": \"',variables('cloudprofileKeyVaultEndpoint'),'\",\n      \"graphEndpoint\": \"',variables('cloudprofileGraphEndpoint'),'\",\n      \"storageEndpointSuffix\": \"',variables('cloudprofileStorageEndpointSuffix'),'\",\n      \"sQLDatabaseDNSSuffix\": \"',variables('cloudprofileSQLDatabaseDNSSuffix'),'\",\n      \"trafficManagerDNSSuffix\": \"',variables('cloudprofileTrafficManagerDNSSuffix'),'\",\n      \"keyVaultDNSSuffix\": \"',variables('cloudprofileKeyVaultDNSSuffix'),'\",\n      \"serviceBusEndpointSuffix\": \"',variables('cloudprofileServiceBusEndpointSuffix'),'\",\n      \"serviceManagementVMDNSSuffix\": \"',variables('cloudprofileServiceManagementVMDNSSuffix'),'\",\n      \"resourceManagerVMDNSSuffix\": \"',variables('cloudprofileResourceManagerVMDNSSuffix'),'\",\n      \"containerRegistryDNSSuffix\": \"',variables('cloudprofileContainerRegistryDNSSuffix'),'\"\n    }\n\n- path: \"/usr/local/share/ca-certificates/azurestack.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('cloudprofileResourceManagerSelfSignedCertificate'),'\n\n- path: \"/etc/systemd/system/docker.service.d/clear_mount_propagation_flags.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    MountFlags=shared\n\n- path: \"/etc/systemd/system/docker.service.d/exec_start.conf\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Service]\n    ExecStart=\n    ExecStart=/usr/bin/docker daemon -H fd:// --storage-driver=overlay --bip=',variables('dockerBridgeCidr'),'\n\n- path: \"/etc/docker/daemon.json\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    {\n      \"live-restore\": true,\n      \"log-driver\": \"json-file\",\n      \"log-opts\":  {\n         \"max-size\": \"50m\",\n         \"max-file\": \"5\"\n      }\n    }\n\n- path: \"/etc/kubernetes/certs/ca.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('caCertificate'),'\n\n- path: \"/etc/kubernetes/certs/apiserver.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('apiServerCertificate'),'\n\n- path: \"/etc/kubernetes/certs/client.crt\"\n  permissions: \"0644\"\n  encoding: \"base64\"\n  owner: \"root\"\n  content: |\n    ',variables('clientCertificate'),'\n\n- path: \"/var/lib/kubelet/kubeconfig\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    apiVersion: v1\n    kind: Config\n    clusters:\n    - name: localcluster\n      cluster:\n        certificate-authority: /etc/kubernetes/certs/ca.crt\n        server: ',concat('https://', variables('masterPrivateIpAddrs')[copyIndex(variables('masterOffset'))], ':443'),'\n    users:\n    - name: client\n      user:\n        client-certificate: /etc/kubernetes/certs/client.crt\n        client-key: /etc/kubernetes/certs/client.key\n    contexts:\n    - context:\n        cluster: localcluster\n        user: client\n      name: localclustercontext\n    current-context: localclustercontext\n\n- path: /etc/kubernetes/manifests/kube-apiserver.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/6SU3U7DRhCF7/MUlq+zGChSkYWREEUqEtCUSL2frCfONvvjzoyN0qev1vm3Q4hUuPKePd/unJks1OYvJDbB50na3qSjpfFlnqSTUKYjhwIlCOSjJPHgME/SZTNDBbVhpBYp3Qhcg96pvGJBFyULM7Qc3UkiBilPdPBCwaragsduXQdXB49e8uSYPeIadfQuAssHylegZZ4INdEXOWA80oauvr9f/DMOqqg+RJk8CvLvqxopfk5r1I/bjTo4BzGAzXckp9liuzc9XB6c0q0qBaUzHBNVm2qLj21Eb2aOeqUtjt+MM/IJvkIaT5Fao/FJ69B4Gf+Gc2isTCUQVPhsgXn8iRwa0vhnEwQG55WEzMX1VfffV60NX6om0xqLFZY92XhG3RCqOpAU99f3ff+hfHf3S0/VNjSlqim0pkQq4N+G8OQWHfzcVEWGorN9E7LOcPU3Bz84tstEaduwIClTK4ppFV0LN4k9m5Iee0YUXap1X7hYiNR5lt3c/tplc5M/OIi4F9HlszXoZRJITiL+aQI1ThFCWcShG4TeIolh3MV/MFtPk9dpd4PXSZ8tlpVGEjU3FgdxRIWz3WBdaZIT/thMEFRLXF2GWeJq0JRYvNJwDqDhxAW2jYH1tP6fS/B6wtUM9BJ9WcTcb3t72uLuaOUg5RcPM4ufM9j/fNtgG4fv8WKbh+HocUDRau/fc5PERcsEZJEnaa+QdMhpgZQ1s45lUb4FtUCZNbNssG9Hcmx+dH8BVOglewcPFZavJXoxslJTFDG+Oqojjusf3q52D2XvPGZ7tmxmu27cWeg65v7Tezrd+Hp3J+yA9ZmYf4r4e9rJrLc4x+ZiwGVxb8nM9qJCD4L9LwAA//8MPk7tcwcAAA==\n\n- path: /etc/kubernetes/manifests/kube-controller-manager.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/6SUT2/bPAzG7/kUhu+q8b5Ho+6l6P4c0gXtsDsjsa4WWfQo2l326Qc6TtM4cVNgvpl6+CP1SCK0/gdy8hTLLO//yxcbH12Z5Sty+aJBAQcC5SLLIjRYZvmmW6OxFIUpBGTTQIQaOR8VqQX7KkvbJNjoUoA1hqSYLBOPXGYjwrQBIg5xS01LEaOU2UyRRWrRKuSZktyjvBBvyky4U4DKwUfksYz5QMf6+QZqlV2rjiMKpi/bFll/H1u0N3uhpaYB9Wb81xJ58bzX5m/D8+WGZWM0w1J88nVV9MBF8OtCYwGlOKxNkiAEsiBoIjk01jtO1fU+eE8ObzV0M8myoUuCPOirYZe3u4iq58TqXXXdgP58+uXiivHJ/z5VU+dMy9R7h1zBn47xrGS/VRRbHHwuhoSrn4niJIuJxFgwTz7gSZZFllRYuLIsM+0nX0cfa6PSf4ZscHuBscHthJGQe2/RgLXURTEt+15P7gILWq+ZyGeQAcEhGwxopdJLf7T+5vreRVgHfFiDnZ5XX/0/iQw3qaHohdjUDBZNi+zJVW+At8JhWbPesOVO+lmVq0E4rdGSM9h7K56iEd8gdXIGtiJ3N6q+70RTEFMnaFifgvXBwwCcbe5B1Q9H4kl/PYWuwaUeRzp6xOOcQLHmgD00k2WN5qxAnsssn5xbfsrpgU3wazM+51nQ5NmfkprkL+W+ANQYpVgOQ8Z9dRjFy9Y8ooiP9dEuGMF9i2H7OjEnfacU3t10SmF3S+ehh/hi7/d0Gp93WQf6UOsV3b5j9yWr52lnPT/1+zLgY8bvySmFD230YPHfAAAA//86h92VlwcAAA==\n\n- path: /etc/kubernetes/manifests/kube-scheduler.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/4yST48bIQzF7/kUiDtC7RE1PbeHbVdaqXcH3AkKGIQ9s8q3r0gnf3byb+c2fvYPvydDjX+wcSzklJ6+6NUuUnBKv5agVxkFAgi4lVIEGZ3Su3GDhv0Ww5iw6VngCv6s7lkwdynBBhP3aaUkYnPKF5JWkqkJCA91X3IthCROfWSvuKLvs9vC8gvlvbSdU9LGPtc5EAnbTDf39+tfzDB09VuXG6Eg/9hXbP33raL/fmz0JWeg4ObfDtZ2e2zVl+WrRw5VY3qjL/Q3Dms7QbMpbmyvJRR71hZDCSFgM5jQy7p7XOjT+uuxMpU0ZnwpIwlf7jkHgOLN2eUZo1TuI68gW6e0RfH2VtuJM0EzKW7MvPpd0MLiNSlzfDb7DjAgiX0BggHDz4AkUfbmDUUiDR9cNITwm9L+dAqLvZnTQ9PMyXps8hj6P+Tlcd3Ott/n4YUTsD4I+VnA92k3k75O+Tngc3EfyczpU0Yvgv0XAAD//91eUmRVBAAA\n\n- path: /etc/kubernetes/manifests/kube-addon-manager.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/5SRwU7zMBCE73mKVe6R///Qi4WQOHIoVKrEfWuvUquxHbzrVHl7lKRJCyIUjvbOfp4ZY+veKLGLQUP3vzi5YDXsoi08CVoU1AVAQE8aTvlAFVobQ+UxYE3pMuIWzTznnoV8AdDdULklM3COkeWF5BzTSYOkTAWAiUHQBUo8KKqf3gJwHmvS8DCMUyAhfho020myb8k8jrpEHHMyNDKni/dMLMsZwLRZw8YvZ08+pl7D5t/WjZddbLKnbcxhXpvNjb74sukHwQ7lqKFUJEZdvalJWC4e0L6Gpl+iX4me3Xe4DpNq3EGdEWsKoqac9tlSECd9tScRF+rfvFAyN+WaZeZGGUqyDprK+PRFNy0M/zryLuvtvTq+5l4D/KWAmcnc3DV1DTzNio8AAAD//50FSXUHAwAA\n\n- path: /etc/kubernetes/addons/kube-dns-deployment.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/8xXS2/jNhC+61cQ7pl+JMhuINQLBOugG2yTGnXa+4QcW0QokuHDjffXF5RkWS+7dg7FyidzOA9+38xHCYz4G60TWqVkO0teheIpWaHdCoZ3jOmgfJKjBw4e0oQQBTmm5DW8IOXKVQvOANuvup3zmCeESHhB6aIPKSxWoUc3FnrCZHAeLXVlmpSMvA04KnYC51rloGCDdtx2yzXHlPyJTCsmJCaU0uRU+a26W9XcOgrGtI5xSY3tnSUi38MLLp5WFyDkDLJYT5XpYZmS2XQcf7NpQojR1hf10irivs5oSMnNdfnHaq+Zlin5a7Fsb6aemVMOz1+jg0OJzGt7DJkuyGCMm2xnL+hhD/cCjdS7HDud8jH+h7nZ1hxfTXsQ08PiCZgtGikYuJRc9Y6dg2fZ7416j9XRq8RjbiR4rOI0jl80s1Lagxda1XEJcSxDHiTaMUiTQafJmRVeMJDUaJ6S0ahyk63ijpd3CdQDxyFkD1dR/notlPC7Q1qj+Z3y4q5niI2Fa7QW+SJYoTar8pRCbR42StfL9+/IQgSk6UrJPyg2mY8DMG2sl/mqXM9o87RlrFBZtahsPgWt9+/GonNtDg6ZX3GX7tHsmQnRBi3E4ORBDZi3IAMOxC0id5kpH6+Nlnqz+14kbpGVaedjFyf7nTImb1Ze1fu1apK7KJbuDyV3Sb/g+3fhfN22WoYcG3E6I8S0WotNHaX8+wimebSesB1yxiJBpiQ2V1KH8CAU2kZSsJsGWJSMKOU6B6HmVZ+OpWYgx6POHuVoFLH5bDq9ue4Yt/OrzkpZPOXCziedAx52ihw2mJJfDwxUCr4yyL7U26TYokLnlla/YBOMNQgZLD5nFl2mJU/JTcOaeW9+Q99uDAM+S8lokiFIn/2gMTVXbtTp+CjWt9Pb9iBE0Yjof3t+XjYMcTIEyAVK2K3ixchdSj41XV1gDJ1r1DlrWL3IUQdfux7OcCC7yXV9Ke3hrlleFnUXBPVaJuJfENuSi/bFdXFAz8yJoOXlVj4WgYtBEk/SVLsdIWj2YYKup2dRYNHpYFlbX6TIhe8oTo65truUzD5PH0XDYvEtoOvuZiYUuOaDMVohStV4jC+BLdZPiwchefRYFjh2J/CUFjBgGVInfmCc9GlnrJWmERG57azHqw3tfHb1uXx5+mVIJapNE6EocG7HYA1MznQxn87ZLvWGroEJKfxuTk8JzeJp9QjurS00dWPn4N7Onrfh2bh8zI7P2H9M1zCPOZ8rJ7V+DaZ5xXFcQ5B+7LZs3BJ8UkNLvkw4bicqSNnBN1g5r6Wzwqkr/B/PmxaUnpm9J9zFluKGisLdWX8LAv2pfojvRN/K0P/f5dNDkPx0l09V6tnD0Kn72GVwoajeXKCpw5LaiMCVW2op2C5+NRVNWRlc64v7aehNS2mO/Xfd+CHW+YTQLiVSqPCe/BsAAP//MQMKdd0PAAA=\n\n- path: /etc/kubernetes/addons/kube-proxy-daemonset.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/5RUy27bMBC8+ysI3RklVyEuULgBemkawEDva2psE+ZDWS5d++8LSrUtOYmb8kTMLoczswSps7/AycbQKBwEoWxTvX9YQehhtrOhbdQ3go9hCZl5CLUk1MyUcrSCS2Wn1C6vwAGCdGdjbVxOAtYJvLcGjaqEM6q+00TfxYAgTX9IdxwPx74iFtyoEFvMlArkcdVRoNSROeHpmAR+ljqYIkLgO0eCQdBYaFljsbdlvJGi1OmKvhQdmKSkdIK02uE4tGuODnfTNDyVMM7csSvnIzfq6TWTO+N7cnkaVVlYr2GkUc9xabZos8PsZCAI2QAeyTDRewrtxaVWVb09duCiqBrBU7taVVqXFhPD2m7m9Z64dnZVF8xB6kutmh46TdrYluePpW0xIAvb8per5jVIMkNvSJDmT4cObD2CkFuwFWvIvcT2awhR+nzn0ySsp03J5/GS7veTtWUHM7rtncczLEaKmQ1GD6GArxlJJphSpsuNeri/92c0wWS2clzEIDjIuL1ju7cOG7SNKqovQ40ue/yIOYz5tfIFeSHZNqqqIaZOydUGLKka0Q4+UnK6L+ltTDIRTu3P4I5Xd77DfonsLT3E6Ev9v+k/81TGExlq/7qmOH2G/I68m+BDnqMnXxp7KeNp/JWWE9dpS4zaUJ+gXVtDkxBuJHyb+zO2PzB9m/ijcd0YVvl4lnAw5Vc5Hygf+NVPFFOjnA35MPsTAAD//zcsf+33BQAA\n\n- path: /etc/kubernetes/addons/kubernetes-dashboard-deployment.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/8xUQW/bPAy9+1cQuTtt8V1a4cOArgV6GQqjGXanJS7RIouCRGf1fv0gt3HsJE2DYQWmk0DRj4+Pj8Zgv1FMlr2CzVWxtt4oWFDcWE23WnPrpWhI0KCgKgAc1uRSvgGsr1OJIShYtzVFT0KpNJhWNWM0LxnDw9zyhXZtEopleoFXMJPY0qzPRGPYN+hxSXE+/axhQwqeSLPX1lEB4LGhN6vmxxRQv2aUqUtCTVGWZTFuNtao59jKiqP9hWLZz9fXfb3NVU2CWy3uXkg/saPP1hvrlxM9TlL5B8SK7OiJvmcOGOxD5Dac6L0AOOh6aHLLCE1jfZHa+gdpSaoo4ahr/s6Y9j35thnPVu+9SfwJ7RRIZx6Bo/SEyv6q4PqyrykYlyRVH7q5vMnBRI60cDzPHtIFUvDIhjLIgUz0LOTzNe3Z956C466hU2v8MUv6sUJHCs5qTAquDrRsUPTqy6jDM+SlJjgUegUYKZWPm2Cds8tbmvlo9oLWUxwQSsC4TAoGQNvgkhT8v8O738ItAulP08Sqda5iZ3Wn4Nb9xC4N785uyFNKVeSadoQBViLhgWQcAggoKwWzi9k0OnbpUNhbsejuyWG3yFM2ScF/4wyxDXErxx5PDnpXdKRwuVOtOkYnRBbW7BR8vate42ny/3l8r6ZnQ4uJb/LJu7NnbU4KnPXtMxS/AwAA//+MY7+tLgcAAA==\n\n- path: /etc/kubernetes/addons/kube-heapster-deployment.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/8xWW2tjNxB+P79C+F1ep92AK+pCmk3bh2Y3JFAoLISxNOujWrfq4rX31xfpHNvnYgcTNlC9WGdGo2/mm4sMTv6FPkhrGNlcVWtpBCNP6DeS4w3nNplYaYwgIAKrCDGgkZEawYWIvhUEBxwZWacl0rALEXVFiIIlqpBtSNF4gxHDVNp3XKVsTEMDw8gk+oSTchKEsEaDgRX6ad9MW4GMPCK3hkuFFaW06rrvl8CnkGJtvfwGUVozXc+L5eZqiRH20d028I9W4YnQGv/ZPkL6VcaaGjBm93Yx3ZmQPN5tZYih8klhYBUl4OTv3iZX8CjBbUSTIw3lE5zLG4/BJs+xPSTQKbvTaGJWbtAvW8UKY/lVMjSbrxB5XXbJCYhYtq4IR9CTyRgJNy0IPZZA+2lFu3NWXObGd0jlr9IIaVb/y4xahY/4JYPsiX0hxIqQcZ1eEEtIy3+Qx1I6J9v48uYdpmM4GHokv47B/snGsT/6jl3iaXDIM7SzPrYllreMzGcFJoJfYXxoRfMfKkICKuTR+tbjeaDgXAcrB99E++HQTD02jo14qMazfIxuf8s6e2EYD/jc0+bRKckhMHI1YkbnzvyzE8zpcCJqpyBia9QhIi/Vsz9HCCFgjI2lCzqHA69RJIV+CsrVMCCAexklB0WdFawZUYTsAyu5twp9/05K1rhj5LY1vcn0hk9G7Q6Y1mUb6xk5kFru7bXSx2F15sWtiSAN+g6a1LBCRn4+er6v8SeH/JcDKrdagxHH0CmZvNvfP+lKKW2m8KJDRkhag989g5Ps8+Tz5GgwaqNm9Ub5UfhvwhB7MkK4S7lzdE+oUVu/Y+Tq/exedjRKavnqC06xVRL0iEF+u4gxZ8VzGYYDyrhLi/lMD6S4jR6Kbja9HiobDxfFwZN27YH3I3WsPYbaKrG4HmiOj/PiTG4PNXTugLNKUYdeWrH4cZbX0LkQpc4FvMCtswZNlKDOFcThFXxdWVyfyepPF1bFRfZoNt0kb0Al/M1b3b/vi0Ql2jd2JH+AWLPDaJpmDjrHGkru/35++PTh+ePN/d33Rysj+SXIp4eb2z1u/vv01JvEeeV3ZjAAbWBESZO21X8BAAD//0SxZ2rFCwAA\n\n- path: /etc/kubernetes/addons/azure-storage-classes.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/8yQTUs0MRCE7/kVzd4zL3t7ydWrgrjgVXon5RJmkgzdnQH99TIfLqhXFzx3nkrVw1N6hmiqJZBaFb6gG/5rl+q/+XiG8dENqcRAp+14N7KqyzCObBwcUeGMQBGv3EZzRFxKNbZUiy5n+oztF7JbIruhnSEFhvWfpH6n/fom0MGk4eCIRj5j3GO+Qv3Y1CBeIXPqcWUmqXNa5kDCN4Tfm8DHpIPz3rvfWp658AXRT4KcWv5p4FYjJhbOMMiavXV92Mq4q3Xu+9qK2duEQI9bxZf7p9NNFKhxiSzxLzs47R1XCR8BAAD//1fQzbL+AgAA\n\n- path: /etc/kubernetes/addons/kube-tiller-deployment.yaml\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/9RUS2sbMRC+768Ycl8npgkUUQppYkIgCSYOvRZZ+9VWo1elkYn768uu680+UpMWUqhOkmZG30MjyaA/IybtnaDNtHjUrhK0QNxohXOlfHZcWLCsJEtREDlpIYi1MYi/lilIBUGPeYkybRPDFkRGLmFSXUFNJDow0kT7Y2VyYsQy7UAEHXHMOGoyZVV5Z6WTK8RJv8z6qs6duZQjZk86cToqyrIsugriUqqJzLz2Uf+QrL2bPL5vyjfTJVjuBV7sONx7g0/aVdqtDon8N1qiN7jH1xpGBn0VfQ4HBBVEIykt8z0tWVntipSX36A4iaKkF+/3tbc6dHvYLz0Pu6bJEAStYWyzGoC9pad9sLJCMH77e4EpQNWMg4/cUC/HZOuYoNPT6bvTZs0yrsDzZrdNSzBQ7OMr5PM2oL3F6/nIZDwxXD1Ngx6+bMRYDB7o/+w7wwYjGTv2XVX16Cobq3tR4f7gZt5r+rthKpHyjqV2iC1GSXCbZ8B9Nzxc39zM7r/cnd/OFvPzi1mbQLSRJo/+wt3QVq4g6MOzfQ8N+iJAfWyzjN7AIaV59EuIzslr5nAF7m4RBclrQcf7on6sbdSzzr52mrU0lzByu4DyrkqCpp0E1hY+8wuxkbt7lNS1qHVxPngoBw6JkJX+Y9Vt1dvKjkg+R4XUJRHxPSNx6hNTIQs6O7G9TQvr41bQ9OzkVnciRlv91wc4X2HR+2TqUX8Pg+fpkyCjXX4qfgYAAP//2RKVauoHAAA=\n\n\n\n- path: \"/etc/systemd/system/kubectl-extract.service\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    [Unit]\n    Description=Kubectl extraction\n    Requires=docker.service\n    After=docker.service\n    ConditionPathExists=!/usr/local/bin/kubectl\n\n    [Service]\n    TimeoutStartSec=0\n    Restart=on-failure\n    RestartSec=5s\n    ExecStartPre=/bin/mkdir -p /tmp/kubectldir\n    ExecStartPre=/usr/bin/docker pull ',variables('kubernetesHyperkubeSpec'),'\n    ExecStartPre=/usr/bin/docker run --rm -v /tmp/kubectldir:/opt/kubectldir ',variables('kubernetesHyperkubeSpec'),' /bin/bash -c \"cp /hyperkube /opt/kubectldir/\"\n    ExecStartPre=/bin/mv /tmp/kubectldir/hyperkube /usr/local/bin/kubectl\n    ExecStart=/bin/chmod a+x /usr/local/bin/kubectl\n\n    [Install]\n    WantedBy=multi-user.target\n\n- path: \"/etc/default/kubelet\"\n  permissions: \"0644\"\n  owner: \"root\"\n  content: |\n    KUBELET_CLUSTER_DNS=',variables('kubeDnsServiceIP'),'\n    KUBELET_API_SERVERS=',concat('https://', variables('masterPrivateIpAddrs')[copyIndex(variables('masterOffset'))], ':443'),'\n    KUBELET_IMAGE=',variables('kubernetesHyperkubeSpec'),'\n    KUBELET_NETWORK_PLUGIN=\n    KUBELET_MAX_PODS=110\n    DOCKER_OPTS=\n    KUBELET_NODE_LABELS=role=master\n    KUBELET_POD_INFRA_CONTAINER_IMAGE=',variables('kubernetesPodInfraContainerSpec'),'\n    KUBELET_NODE_STATUS_UPDATE_FREQUENCY=',variables('kubernetesNodeStatusUpdateFrequency'),'\n    KUBE_CTRL_MGR_NODE_MONITOR_GRACE_PERIOD=',variables('kubernetesCtrlMgrNodeMonitorGracePeriod'),'\n    KUBE_CTRL_MGR_POD_EVICTION_TIMEOUT=',variables('kubernetesCtrlMgrPodEvictionTimeout'),'\n    KUBE_CTRL_MGR_ROUTE_RECONCILIATION_PERIOD=',variables('kubernetesCtrlMgrRouteReconciliationPeriod'),'\n\n  \n    KUBELET_REGISTER_NODE=--register-node=true\n    KUBELET_REGISTER_WITH_TAINTS=--register-with-taints=',variables('registerWithTaints'),'\n  \n\n- path: \"/etc/systemd/system/kubelet.service\"\n  permissions: \"0644\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    H4sIAAAAAAAA/5RVb2/bthN+r09BpH3x+72g1aTB1rnQCzdRMiOpk1kyuiENBFo6S1woUuMd7XprvvtAWUks2xk2GDDI557njveH4t1MS7oPzgFzKxuSRkdXbg4KKJjCH05awKgw+QPYAYJdyhyC0YLA7oLBXbJZ3QdTQBKWIqFWYo1BrJfSGl2DpgupIAqB8rCAhXCKwocuVuLyHBDjb5ISEuQwOj59H8TfIE+8r1sLUTiXOpwLrFhoGgrFn85CmBtNQmqw+ORqgNUBXf1QSMt4w8KlsKGS8+fIr8TgOTuSC3bH3v6vNk4T+85KCw37erTr4esR+85WOePq/4wrYO/YPfvIqALNNqFbOedzqYu98PvAR7aQR4cy6NzU4gE4VsLCvrfgDUsriUwiE6wRlqRQbGXsg7DG6YKRYeTtrkGyIGrmW201EHgNOhgGbxiriBochmEpqXLzQW7q1v+Gt71sJRieHv90/MObdpOb2veZvz8+OT358OP7451E0GeCa8xJMb5iGmggm+XpgPIms0BWAp5EH/oivlHBnMRcATJOTAtfCSWRDlJl88/UKHRo26JuhphZp9nXgDHONVBUGaRu28iit7VyKRWUUHSArbvF0ihXQxQWsBz6vx0Y1zhs/6zZsfgOWqeHzwu7OsDwPd6cNRzuAK8LuqHYUnTIsBufAzJTDp8Xe479xd1q/3AH2E8O7bIv6ANe8Pb85uwqnmY3t2lyIByiCnOwhMP+9pWUV0KUoCn8LLQooRgXoEnSmidAJHWJw3/P7JJh7O1fV7NP8XWcZuPPo8v4sYMZC6t1A9anw54u75PJn81judELWe635MXWk9jNF5e/Ym5MwaVeWMGfP3tc1qKE6OjlkLc359l4cjEdZWc3k3Q0nsTT7uBHPWeiKCwgRu8G7a9vU8qstqY9IuugxwDtbxj3X3+whywFzF1ZSl3ySuhCgcW9VGqh5QKQeCOo2puuJ2tflyuHBJYXGqOXnM+uZ0kaT7PzSfJ4mG5qIXXUbQfK5EL1iNoUwJWYg8LtYk5uzuPsevQpvk52ypcr4wreWLOUBdiofY0OEJ4GYCe5lj74HY3u193DW821UEoku/6PbiohbSM1r00BUWNNLTF3xiGfW1mU/WNqIP9A8Ea5Uuqtmk7i9MvN9Cq7vZ5djif9stbim+/gdgs+j371o7dT/7as2D7o3DWFIOALP+Sg83W0U+YkHaWzJJvdno/SOLuYxr/M4snZb32Hy+hk60JexKN0No2zy1Ea9yK/UKbx5bidDR/j8ZDhyzj9OfMXJU0eg+BurJGEUvfBF6EJik/rqHaKJHcIdkDClkDB3wEAAP//UDkP9jUJAAA=\n\n- path: \"/opt/azure/containers/kubelet.sh\"\n  permissions: \"0755\"\n  owner: \"root\"\n  content: |\n    #!/bin/bash\n    set -e\n\n\n\n\n\n    sed -i \"s|<kubernetesAddonManagerSpec>|',variables('kubernetesAddonManagerSpec'),'|g\" \"/etc/kubernetes/manifests/kube-addon-manager.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g; s|<kubeServiceCidr>|',variables('kubeServiceCidr'),'|g; s|<masterEtcdClientPort>|',variables('masterEtcdClientPort'),'|g; s|<kubernetesAPIServerIP>|',variables('kubernetesAPIServerIP'),'|g\" \"/etc/kubernetes/manifests/kube-apiserver.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g; s|<masterFqdnPrefix>|',variables('masterFqdnPrefix'),'|g; s|<allocateNodeCidrs>|',variables('allocateNodeCidrs'),'|g; s|<kubeClusterCidr>|',variables('kubeClusterCidr'),'|g; s|<kubernetesCtrlMgrNodeMonitorGracePeriod>|',variables('kubernetesCtrlMgrNodeMonitorGracePeriod'),'|g; s|<kubernetesCtrlMgrPodEvictionTimeout>|',variables('kubernetesCtrlMgrPodEvictionTimeout'),'|g; s|<kubernetesCtrlMgrRouteReconciliationPeriod>|',variables('kubernetesCtrlMgrRouteReconciliationPeriod'),'|g\" \"/etc/kubernetes/manifests/kube-controller-manager.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g\" \"/etc/kubernetes/manifests/kube-scheduler.yaml\"\n    sed -i \"s|<kubernetesHyperkubeSpec>|',variables('kubernetesHyperkubeSpec'),'|g; s|<kubeClusterCidr>|',variables('kubeClusterCidr'),'|g\" \"/etc/kubernetes/addons/kube-proxy-daemonset.yaml\"\n    sed -i \"s|<kubernetesKubeDNSSpec>|',variables('kubernetesKubeDNSSpec'),'|g; s|<kubernetesDNSMasqSpec>|',variables('kubernetesDNSMasqSpec'),'|g; s|<kubernetesExecHealthzSpec>|',variables('kubernetesExecHealthzSpec'),'|g\" \"/etc/kubernetes/addons/kube-dns-deployment.yaml\"\n    sed -i \"s|<kubernetesHeapsterSpec>|',variables('kubernetesHeapsterSpec'),'|g; s|<kubernetesAddonResizerSpec>|',variables('kubernetesAddonResizerSpec'),'|g\" \"/etc/kubernetes/addons/kube-heapster-deployment.yaml\"\n    sed -i \"s|<kubernetesDashboardSpec>|',variables('kubernetesDashboardSpec'),'|g\" \"/etc/kubernetes/addons/kubernetes-dashboard-deployment.yaml\"\n    sed -i \"s|<kubernetesTillerSpec>|',variables('kubernetesTillerSpec'),'|g\" \"/etc/kubernetes/addons/kube-tiller-deployment.yaml\"\n\n\n    sed -i \"/<kubernetesEnableRbac>/d\" \"/etc/kubernetes/manifests/kube-apiserver.yaml\"\n    sed -i \"/<kubernetesEnableRbac>/d\" \"/etc/kubernetes/manifests/kube-controller-manager.yaml\"\n\n\n\n\n- path: \"/opt/azure/containers/provision.sh\"\n  permissions: \"0744\"\n  encoding: gzip\n  owner: \"root\"\n  content: !!binary |\n    ',variables('provisionScript'),'\n\n- path: \"/opt/azure/containers/mountetcd.sh\"\n  permissions: \"0744\"\n  owner: \"root\"\n  content: |\n    #!/bin/bash\n    # Mounting is done here instead of etcd because of bug https://bugs.launchpad.net/cloud-init/+bug/1692093\n    # Once the bug is fixed, replace the below with the cloud init changes replaced in https://github.com/Azure/acs-engine/pull/661.\n    set -x\n    DISK=/dev/sdc\n    PARTITION=${DISK}1\n    MOUNTPOINT=/var/lib/etcddisk\n    udevadm settle\n    mkdir -p $MOUNTPOINT\n    mount | grep $MOUNTPOINT\n    if [ $? -eq 0 ]\n    then\n        echo \"disk is already mounted\"\n        exit 0\n    fi\n    # fill /etc/fstab\n    grep \"/dev/sdc1\" /etc/fstab\n    if [ $? -ne 0 ]\n    then\n        echo \"$PARTITION       $MOUNTPOINT       auto    defaults,nofail       0       2\" >> /etc/fstab\n    fi\n    # check if partition exists\n    ls $PARTITION\n    if [ $? -ne 0 ]\n    then\n        # partition does not exist\n        /sbin/sgdisk --new 1 $DISK\n        /sbin/mkfs.ext4 $PARTITION -L etcd_disk -F -E lazy_itable_init=1,lazy_journal_init=1\n    fi\n    mount $MOUNTPOINT\n\nruncmd:\n- sudo apt-get install etcd -y\n- /bin/echo DAEMON_ARGS=--name \"',variables('masterVMNames')[copyIndex(variables('masterOffset'))],'\" --initial-advertise-peer-urls \"',variables('masterEtcdPeerURLs')[copyIndex(variables('masterOffset'))],'\" --listen-peer-urls \"',variables('masterEtcdPeerURLs')[copyIndex(variables('masterOffset'))],'\" --advertise-client-urls \"',variables('masterEtcdClientURLs')[copyIndex(variables('masterOffset'))],'\" --listen-client-urls \"',concat(variables('masterEtcdClientURLs')[copyIndex(variables('masterOffset'))], ',http://127.0.0.1:', variables('masterEtcdClientPort')),'\" --initial-cluster-token \"k8s-etcd-cluster\" --initial-cluster \"',variables('masterEtcdClusterStates')[div(variables('masterCount'), 2)],' --data-dir \"/var/lib/etcddisk\"\" --initial-cluster-state \"new\" | tee -a /etc/default/etcd\n- sudo /bin/chown -R etcd:etcd /var/lib/etcd/default\n- /opt/azure/containers/mountetcd.sh\n- sudo /bin/chown -R etcd:etcd /var/lib/etcddisk\n- systemctl stop etcd\n- sudo -u etcd rm -rf /var/lib/etcd/default\n- systemctl restart etcd\n- for i in $(seq 1 20); do curl --max-time 60 http://127.0.0.1:2379/v2/machines; [ $? -eq 0 ] && break || sleep 5; done\n- retrycmd_if_failure() { for i in 1 2 3 4 5; do $@; [ $? -eq 0  ] && break || sleep 5; done ; }\n- retrycmd_if_failure apt-get update\n- retrycmd_if_failure apt-get install -y apt-transport-https ca-certificates\n- retrycmd_if_failure curl --max-time 60 -fsSL https://aptdocker.azureedge.net/gpg | apt-key add -\n- echo \"deb ',variables('dockerEngineDownloadRepo'),' ubuntu-xenial main\" | sudo tee /etc/apt/sources.list.d/docker.list\n- \"echo \\\"Package: docker-engine\\nPin: version ',variables('dockerEngineVersion'),'\\nPin-Priority: 550\\n\\\" > /etc/apt/preferences.d/docker.pref\"\n- retrycmd_if_failure apt-get update\n- retrycmd_if_failure apt-get install -y ebtables\n- retrycmd_if_failure apt-get install -y docker-engine\n- systemctl restart docker\n- mkdir -p /etc/kubernetes/manifests\n- usermod -aG docker ',variables('username'),'\n- /usr/lib/apt/apt.systemd.daily\n- touch /opt/azure/containers/runcmd.complete\n'))]",
           "linuxConfiguration": {
-            "disablePasswordAuthentication": "true",
+            "disablePasswordAuthentication": "false",
             "ssh": {
               "publicKeys": [
                 {
@@ -1596,9 +2012,9 @@
               "createOption": "Empty",
               "diskSizeGB": "128",
               "lun": 0,
-              "name": "[concat(variables('masterVMNamePrefix'), copyIndex(),'-etcddisk')]",
+              "name": "[concat(variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')),'-etcddisk')]",
               "vhd": {
-                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',variables('masterStorageAccountName')),variables('apiVersionStorage')).primaryEndpoints.blob,'vhds/', variables('masterVMNamePrefix'),copyIndex(),'-etcddisk.vhd')]"
+                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',variables('masterStorageAccountName')),variables('apiVersionStorage')).primaryEndpoints.blob,'vhds/', variables('masterVMNamePrefix'),copyIndex(variables('masterOffset')),'-etcddisk.vhd')]"
               }
             }
           ],
@@ -1611,15 +2027,15 @@
           "osDisk": {
             "caching": "ReadWrite",
             "createOption": "FromImage",
-            "name": "[concat(variables('masterVMNamePrefix'), copyIndex(),'-osdisk')]",
+            "name": "[concat(variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')),'-osdisk')]",
             "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',variables('masterStorageAccountName')),variables('apiVersionStorage')).primaryEndpoints.blob,'vhds/',variables('masterVMNamePrefix'),copyIndex(),'-osdisk.vhd')]"
+              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',variables('masterStorageAccountName')),variables('apiVersionStorage')).primaryEndpoints.blob,'vhds/',variables('masterVMNamePrefix'),copyIndex(variables('masterOffset')),'-osdisk.vhd')]"
             }
           }
         }
       },
       "tags": {
-        "creationSource": "[concat('acsengine-', variables('masterVMNamePrefix'), copyIndex())]",
+        "creationSource": "[concat('acsengine-', variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')))]",
         "orchestrator": "[variables('orchestratorNameVersionTag')]",
         "resourceNameSuffix": "[variables('nameSuffix')]"
       },
@@ -1628,23 +2044,23 @@
     {
       "apiVersion": "[variables('apiVersionDefault')]",
       "copy": {
-        "count": "[variables('masterCount')]",
+        "count": "[sub(variables('masterCount'), variables('masterOffset'))]",
         "name": "vmLoopNode"
       },
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', variables('masterVMNamePrefix'), copyIndex())]"
+        "[concat('Microsoft.Compute/virtualMachines/', variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')))]"
       ],
       "location": "[variables('location')]",
-      "name": "[concat(variables('masterVMNamePrefix'), copyIndex(),'/cse', copyIndex())]",
+      "name": "[concat(variables('masterVMNamePrefix'), copyIndex(variables('masterOffset')),'/cse', copyIndex(variables('masterOffset')))]",
       "properties": {
         "autoUpgradeMinorVersion": true,
         "protectedSettings": {
-          "commandToExecute": "[concat('/usr/bin/nohup /bin/bash -c \"/bin/bash /opt/azure/containers/provision.sh ',variables('tenantID'),' ',variables('subscriptionId'),' ',variables('resourceGroup'),' ',variables('location'),' ',variables('subnetName'),' ',variables('nsgName'),' ',variables('virtualNetworkName'),' ',variables('routeTableName'),' ',variables('primaryAvailablitySetName'),' ',variables('servicePrincipalClientId'),' ',variables('servicePrincipalClientSecret'),' ',variables('clientPrivateKey'),' ',variables('targetEnvironment'),' ',variables('networkPolicy'),' ',variables('apiServerPrivateKey'),' ',variables('caCertificate'),' ',variables('masterFqdnPrefix'),' ',variables('kubeConfigCertificate'),' ',variables('kubeConfigPrivateKey'),' ',variables('username'),' >> /var/log/azure/cluster-provision.log 2>&1\"')]"
+          "commandToExecute": "[concat('/usr/bin/nohup /bin/bash -c \"/bin/bash /opt/azure/containers/provision.sh ',variables('tenantID'),' ',variables('subscriptionId'),' ',variables('resourceGroup'),' ',variables('location'),' ',variables('subnetName'),' ',variables('nsgName'),' ',variables('virtualNetworkName'),' ',variables('routeTableName'),' ',variables('primaryAvailabilitySetName'),' ',variables('servicePrincipalClientId'),' ',variables('servicePrincipalClientSecret'),' ',variables('clientPrivateKey'),' ',variables('targetEnvironment'),' ',variables('networkPolicy'),' ',variables('maxPods'),' ',variables('cloudProviderBackoff'),' ',variables('cloudProviderBackoffRetries'),' ',variables('cloudProviderBackoffExponent'),' ',variables('cloudProviderBackoffDuration'),' ',variables('cloudProviderBackoffJitter'),' ',variables('cloudProviderRatelimit'),' ',variables('cloudProviderRatelimitQPS'),' ',variables('cloudProviderRatelimitBucket'),' ',variables('useManagedIdentityExtension'),' ',variables('useInstanceMetadata'),' ',variables('apiServerPrivateKey'),' ',variables('caCertificate'),' ',variables('caPrivateKey'),' ',variables('masterFqdnPrefix'),' ',variables('kubeConfigCertificate'),' ',variables('kubeConfigPrivateKey'),' ',variables('username'),' >> /var/log/azure/cluster-provision.log 2>&1\"')]"
         },
-        "publisher": "Microsoft.OSTCExtensions",
+        "publisher": "Microsoft.Azure.Extensions",
         "settings": {},
-        "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.0"
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0"
       },
       "type": "Microsoft.Compute/virtualMachines/extensions"
     }
@@ -1660,15 +2076,43 @@
     },
     "agentpool1StorageAccountCount": {
       "type": "int",
-      "value": "[variables('agentpool1Count')]"
+      "value": "[variables('agentpool1StorageAccountsCount')]"
     },
     "agentpool1StorageAccountOffset": {
       "type": "int",
-      "value": "[variables('agentpool1Offset')]"
+      "value": "[variables('agentpool1StorageAccountOffset')]"
+    },
+    "agentpool1SubnetName": {
+      "type": "string",
+      "value": "[variables('agentpool1SubnetName')]"
     },
     "masterFQDN": {
       "type": "string",
       "value": "[reference(concat('Microsoft.Network/publicIPAddresses/', variables('masterPublicIPAddressName'))).dnsSettings.fqdn]"
+    },
+    "primaryAvailabilitySetName": {
+      "type": "string",
+      "value": "[variables('primaryAvailabilitySetName')]"
+    },
+    "resourceGroup": {
+      "type": "string",
+      "value": "[variables('resourceGroup')]"
+    },
+    "routeTableName": {
+      "type": "string",
+      "value": "[variables('routeTableName')]"
+    },
+    "securityGroupName": {
+      "type": "string",
+      "value": "[variables('nsgName')]"
+    },
+    "subnetName": {
+      "type": "string",
+      "value": "[variables('subnetName')]"
+    },
+    "virtualNetworkName": {
+      "type": "string",
+      "value": "[variables('virtualNetworkName')]"
     }
   }
 }
