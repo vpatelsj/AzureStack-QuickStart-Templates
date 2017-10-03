@@ -6,7 +6,7 @@
     },
     "masterProfile": {
       "count": 1,
-      "dnsPrefix": "rg-sm-20170511",
+      "dnsPrefix": "sm-20170210",
       "vmSize": "Standard_D2_v2"
     },
     "agentPoolProfiles": [
@@ -14,7 +14,7 @@
         "name": "agentpublic",
         "count": 3,
         "vmSize": "Standard_D2_v2",
-        "dnsPrefix": "rg-sa-20170511",
+        "dnsPrefix": "sa-20170210",
         "ports": [
           80,
           443,
