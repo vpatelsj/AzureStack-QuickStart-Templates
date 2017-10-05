@@ -1010,7 +1010,7 @@
     "maxStorageAccountsPerAgent": "[div(variables('maxVMsPerPool'),variables('maxVMsPerStorageAccount'))]",
     "maxVMsPerPool": 100,
     "maxVMsPerStorageAccount": 20,
-    "nameSuffix": "[parameters('nameSuffix')]",
+    "nameSuffix": "[uniqueString(resourceGroup().id)]",
     "networkPolicy": "[parameters('networkPolicy')]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "nsgName": "[concat(variables('masterVMNamePrefix'), 'nsg')]",
