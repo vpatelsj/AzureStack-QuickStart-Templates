@@ -803,7 +803,7 @@
       "type": "int"
     },
     "nameSuffix": {
-      "defaultValue": "27999624",
+      "defaultValue": "50000002",
       "metadata": {
         "description": "A string hash of the master DNS name to uniquely identify the cluster."
       },
@@ -1010,7 +1010,7 @@
     "maxStorageAccountsPerAgent": "[div(variables('maxVMsPerPool'),variables('maxVMsPerStorageAccount'))]",
     "maxVMsPerPool": 100,
     "maxVMsPerStorageAccount": 20,
-    "nameSuffix": "[uniqueString(resourceGroup().id)]",
+    "nameSuffix": "[parameters('nameSuffix')]",
     "networkPolicy": "[parameters('networkPolicy')]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "nsgName": "[concat(variables('masterVMNamePrefix'), 'nsg')]",

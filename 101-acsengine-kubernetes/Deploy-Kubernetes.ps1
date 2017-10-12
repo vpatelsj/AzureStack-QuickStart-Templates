@@ -1,10 +1,15 @@
-﻿# Deploy in Azure ###################################################################################################################
+﻿# Login to your Azure account / subscription – this will prompt you with an interactive login.
+# Deploy in Azure ###################################################################################################################
 # Login to your Azure account / subscription – this will prompt you with an interactive login.
+Add-AzureRmAccount -EnvironmentName AzureCloud -TenantId "72f988bf-86f1-41af-91ab-2d7cd011db47" -SubscriptionId "9ee2ec52-83c0-405e-a009-6636ead37acd"
+
 Add-AzureRmAccount
 $TenantID = "72f988bf-86f1-41af-91ab-2d7cd011db47"
-Select-AzureRmSubscription -SubscriptionID 9ee2ec52-83c0-405e-a009-6636ead37acd
+Select-AzureRmSubscription -SubscriptionID 9ee2ec52-83c0-405e-a009-6636ead37acd -TenantId $TenantID
 
-$resourceGroupName = "radhikgu-k8s4"
+Get-AzureRmADApplication -ApplicationId "7c4b28f9-526f-4ce6-9b2a-ba173dec1722"
+
+$resourceGroupName = "radhikgu-k8s"
 $resourceGroupDeploymentName = "$($resourceGroupName)Deployment"
 
 # Create a resource group:
