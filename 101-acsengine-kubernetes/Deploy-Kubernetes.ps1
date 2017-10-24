@@ -3,13 +3,12 @@
 # Login to your Azure account / subscription – this will prompt you with an interactive login.
 Add-AzureRmAccount -EnvironmentName AzureCloud -TenantId "72f988bf-86f1-41af-91ab-2d7cd011db47" -SubscriptionId "9ee2ec52-83c0-405e-a009-6636ead37acd"
 
-Add-AzureRmAccount
 $TenantID = "72f988bf-86f1-41af-91ab-2d7cd011db47"
 Select-AzureRmSubscription -SubscriptionID 9ee2ec52-83c0-405e-a009-6636ead37acd -TenantId $TenantID
 
 Get-AzureRmADApplication -ApplicationId "7c4b28f9-526f-4ce6-9b2a-ba173dec1722"
 
-$resourceGroupName = "radhikgu-k8s"
+$resourceGroupName = "radhikgu-k8s7"
 $resourceGroupDeploymentName = "$($resourceGroupName)Deployment"
 
 # Create a resource group:
@@ -26,7 +25,7 @@ New-AzureRmResourceGroupDeployment  -Name $resourceGroupDeploymentName `
 Import-Module C:\CloudDeployment\AzureStack.Connect.psm1
 
 Add-AzureRmEnvironment -Name "AzureStackUser" -ArmEndpoint "https://management.local.azurestack.external"
-$TenantID = Get-AzsDirectoryTenantId -AADTenantName "azurestackci14.onmicrosoft.com" -EnvironmentName AzureStackUser
+$TenantID = Get-AzsDirectoryTenantId -AADTenantName "azurestackci07.onmicrosoft.com" -EnvironmentName AzureStackUser
 $TenantID
 $UserName='tenantadmin1@msazurestack.onmicrosoft.com'
 $Password='User@123'| ConvertTo-SecureString -Force -AsPlainText
@@ -34,7 +33,7 @@ $Credential= New-Object PSCredential($UserName,$Password)
 Login-AzureRmAccount -EnvironmentName "AzureStackUser" -TenantId $TenantID -Credential $Credential 
 Select-AzureRmSubscription -SubscriptionId dcfb1915-2c88-4c95-877d-24c4b402999b
 
-$resourceGroupName = "radhikgu-k8s7d"
+$resourceGroupName = "radhikgu-k8s1d"
 $resourceGroupDeploymentName = "$($resourceGroupName)Deployment"
 
 # Create a resource group:
@@ -50,15 +49,16 @@ New-AzureRmResourceGroupDeployment  -Name $resourceGroupDeploymentName -Resource
 Import-Module C:\CloudDeployment\AzureStack.Connect.psm1
 
 Add-AzureRmEnvironment -Name "AzureStackUser" -ArmEndpoint "https://management.redmond.ext-u15e0303.masd.stbtest.microsoft.com"
-$TenantID = Get-AzsDirectoryTenantId -AADTenantName "azurestackci14.onmicrosoft.com" -EnvironmentName AzureStackUser
+$TenantID = Get-AzsDirectoryTenantId -AADTenantName "azurestackci13.onmicrosoft.com" -EnvironmentName AzureStackUser
 $TenantID
 $UserName='tenantadmin1@msazurestack.onmicrosoft.com'
 $Password='User@123'| ConvertTo-SecureString -Force -AsPlainText
 $Credential= New-Object PSCredential($UserName,$Password)
-Login-AzureRmAccount -EnvironmentName "AzureStackUser" -TenantId $TenantID -Credential $Credential 
-Select-AzureRmSubscription -SubscriptionId 24a373a3-5c06-49bc-b8e8-f48921ea8336
 
-$resourceGroupName = "radhikgu-k8s4d"
+Login-AzureRmAccount -EnvironmentName "AzureStackUser" -TenantId $TenantID -Credential $Credential 
+Select-AzureRmSubscription -SubscriptionId 3c779415-1821-43ad-9732-dae8fa115229
+
+$resourceGroupName = "radhikgu-k8s1d"
 $resourceGroupDeploymentName = "$($resourceGroupName)Deployment"
 
 # Create a resource group:
@@ -67,3 +67,4 @@ New-AzureRmResourceGroup -Name $resourceGroupName -Location "redmond"
 # Deploy template to resource group: Deploy using a local template and parameter file
 New-AzureRmResourceGroupDeployment  -Name $resourceGroupDeploymentName -ResourceGroupName $resourceGroupName `
                                     -TemplateFile "C:\Kubernetes\azuredeploy_multi.json" `
+                                    -TemplateParameterFile "C:\Kubernetes\azuredeploy.parameters_multi.json" -Verbose

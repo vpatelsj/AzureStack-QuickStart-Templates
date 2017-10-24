@@ -900,7 +900,7 @@
       "type": "int"
     },
     "nameSuffix": {
-      "defaultValue": "27013634",
+      "defaultValue": "11234567",
       "metadata": {
         "description": "A string hash of the master DNS name to uniquely identify the cluster."
       },
