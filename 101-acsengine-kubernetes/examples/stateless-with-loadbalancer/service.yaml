@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: thenginx
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 555
+      name: http
+      targetPort: 80
+  selector:
+    app: nginx
+
