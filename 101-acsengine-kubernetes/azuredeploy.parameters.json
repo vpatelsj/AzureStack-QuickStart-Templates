@@ -153,7 +153,7 @@
       "value": "gcrio.azureedge.net/google_containers/heapster-amd64:v1.4.1"
     },
     "kubernetesHyperkubeSpec": {
-      "value": "radhikagupta5/kubernetes:v1.1"
+      "value": "uday31in/kubecosmo:latest"
     },
     "kubernetesKubeDNSSpec": {
       "value": "gcrio.azureedge.net/google_containers/k8s-dns-kube-dns-amd64:1.14.4"
