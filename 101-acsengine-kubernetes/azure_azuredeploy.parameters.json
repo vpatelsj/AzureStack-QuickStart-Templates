@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "agentpool1Count": {
-      "value": 3
+      "value": 1
     },
     "agentpool1Subnet": {
       "value": "10.240.0.0/16"
@@ -135,7 +135,7 @@
       "value": ""
     },
     "masterEndpointDNSNamePrefix": {
-      "value": "radhikgu-10192017"
+      "value": "radhikgu-11092017"
     },
     "masterSubnet": {
       "value": "10.240.0.0/16"

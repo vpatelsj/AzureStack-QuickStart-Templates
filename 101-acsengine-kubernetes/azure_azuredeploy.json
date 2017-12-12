@@ -803,7 +803,7 @@
       "type": "int"
     },
     "nameSuffix": {
-      "defaultValue": "50000003",
+      "defaultValue": "50000009",
       "metadata": {
         "description": "A string hash of the master DNS name to uniquely identify the cluster."
       },

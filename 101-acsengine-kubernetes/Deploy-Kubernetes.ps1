@@ -8,7 +8,7 @@ Select-AzureRmSubscription -SubscriptionID 9ee2ec52-83c0-405e-a009-6636ead37acd 
 
 Get-AzureRmADApplication -ApplicationId "7c4b28f9-526f-4ce6-9b2a-ba173dec1722"
 
-$resourceGroupName = "radhikgu-k8s7"
+$resourceGroupName = "radhikgu-k8s8"
 $resourceGroupDeploymentName = "$($resourceGroupName)Deployment"
 
 # Create a resource group:
@@ -22,16 +22,18 @@ New-AzureRmResourceGroupDeployment  -Name $resourceGroupDeploymentName `
 
 
 # Deploy in one-node Azure Stack #######################################################################################################
+Get-Date
 Import-Module C:\CloudDeployment\AzureStack.Connect.psm1
 
 Add-AzureRmEnvironment -Name "AzureStackUser" -ArmEndpoint "https://management.local.azurestack.external"
-$TenantID = Get-AzsDirectoryTenantId -AADTenantName "azurestackci07.onmicrosoft.com" -EnvironmentName AzureStackUser
+$TenantID = Get-AzsDirectoryTenantId -AADTenantName "azurestackci02.onmicrosoft.com" -EnvironmentName AzureStackUser
 $TenantID
+#$TenantID = "6a8092d6-08d4-45af-894a-121400ef36a1" 
 $UserName='tenantadmin1@msazurestack.onmicrosoft.com'
 $Password='User@123'| ConvertTo-SecureString -Force -AsPlainText
 $Credential= New-Object PSCredential($UserName,$Password)
 Login-AzureRmAccount -EnvironmentName "AzureStackUser" -TenantId $TenantID -Credential $Credential 
-Select-AzureRmSubscription -SubscriptionId dcfb1915-2c88-4c95-877d-24c4b402999b
+Select-AzureRmSubscription -SubscriptionId ceee0713-cd8a-4f22-9015-ba678bb50206
 
 $resourceGroupName = "radhikgu-k8s1d"
 $resourceGroupDeploymentName = "$($resourceGroupName)Deployment"
@@ -43,7 +45,7 @@ New-AzureRmResourceGroup -Name $resourceGroupName -Location "local"
 New-AzureRmResourceGroupDeployment  -Name $resourceGroupDeploymentName -ResourceGroupName $resourceGroupName `
                                     -TemplateFile "C:\Kubernetes\azuredeploy.json" `
                                     -TemplateParameterFile "C:\Kubernetes\azuredeploy.parameters.json" -Verbose
-
+Get-Date
 # Deploy in multi-node Azure Stack #######################################################################################################
 
 Import-Module C:\CloudDeployment\AzureStack.Connect.psm1
