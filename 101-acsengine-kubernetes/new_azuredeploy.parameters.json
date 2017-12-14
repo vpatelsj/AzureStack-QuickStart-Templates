@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "agentpool1Count": {
-      "value": 2
+      "value": 1
     },
     "agentpool1Subnet": {
       "value": "10.240.0.0/16"
@@ -177,7 +177,7 @@
       "value": "gcrio.azureedge.net/google_containers/heapster-amd64:v1.4.2"
     },
     "kubernetesHyperkubeSpec": {
-      "value": "radhikagupta5/kubernetes:v1.1"
+      "value": "radhikagupta5/kubernetes:v1.4"
     },
     "kubernetesKubeDNSSpec": {
       "value": "gcrio.azureedge.net/google_containers/k8s-dns-kube-dns-amd64:1.14.5"
