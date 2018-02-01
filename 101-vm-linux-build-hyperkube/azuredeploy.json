@@ -46,20 +46,6 @@
 			"description": "Maps to the sku in the Azure Stack Platform Image Repository manifest file Eg: 16.04-LTS, 14.04.5-LTS."
 		  }
 		},
-		"minikubeLink": {
-		  "type": "string",
-		  "defaultValue": "https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64",
-		  "metadata": {
-			"description": "Minikube installation download link"
-		  }
-		},
-		"kubectlLink": {
-		  "type": "string",
-		  "defaultValue": "https://storage.googleapis.com/kubernetes-release/release/v1.8.0/bin/linux/amd64/kubectl",
-		  "metadata": {
-			"description": "kubernetes installation download link"
-		  }
-		},
 		"dockerLink": {
 		  "type": "string",
 		  "defaultValue": "https://download.docker.com/linux/ubuntu",
@@ -129,7 +115,7 @@
         "vnetId": "[resourceId(resourceGroup().Name,'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
 		"scriptName": "script",
-		"scriptParameters": "[concat(parameters('minikubeLink'),' ',parameters('kubectlLink'),' ',parameters('dockerLink'),' ',parameters('repoLink'),' ',parameters('repoBranch'),' ',parameters('dockerhubUsername'),' ',parameters('dockerhubPassword'),' ',parameters('dockerhubPassword'),' ',parameters('hyperkubeVersion'))]"
+		"scriptParameters": "[concat(parameters('dockerLink'),' ',parameters('repoLink'),' ',parameters('repoBranch'),' ',parameters('dockerhubUsername'),' ',parameters('dockerhubPassword'),' ',parameters('dockerhubPassword'),' ',parameters('hyperkubeVersion'))]"
     },
     "resources": [
         {
