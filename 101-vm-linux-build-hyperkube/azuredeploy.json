@@ -84,7 +84,6 @@
 		},
 		"dockerhubReponame": {
 		  "type": "string",
-		  "defaultValue": "kubernetes",
 		  "metadata": {
 			"description": "Dockerhub repo name"
 		  }
