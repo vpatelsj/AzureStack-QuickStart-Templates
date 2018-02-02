@@ -59,7 +59,7 @@ echo "login to dockerhub"
 retrycmd_if_failure sudo docker login --username $DOCKERHUBUSERNAME --password $DOCKERHUBPASSWORD
 
 echo "retag hyperkube image"
-retrycmd_if_failure sudo docker tag gcr.io/google-containers/hyperkube-amd64:$HYPERKUBEVERSION $DOCKERHUBUSERNAME/$DOCKERHUBREPONAME:$HYPERKUBEVERSION
+retrycmd_if_failure sudo docker tag gcr.io/google_containers/hyperkube-amd64:$HYPERKUBEVERSION $DOCKERHUBUSERNAME/$DOCKERHUBREPONAME:$HYPERKUBEVERSION
 
 echo "push hyperkube image to docker hub"
 retrycmd_if_failure sudo docker push $DOCKERHUBUSERNAME/$DOCKERHUBREPONAME:$HYPERKUBEVERSION

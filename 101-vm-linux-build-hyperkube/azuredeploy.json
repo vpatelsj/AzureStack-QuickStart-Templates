@@ -4,10 +4,11 @@
     "parameters": {
         "virtualMachineSize": {
             "type": "String",
-			"defaultValue" : "Standard_D2"
+			"defaultValue" : "Standard_D5_v2"
         },
         "adminUsername": {
-            "type": "String"
+            "type": "String",
+			"defaultValue": "azureuser"
         },
         "adminPassword": {
             "type": "SecureString"
@@ -22,7 +23,7 @@
 
 			},
 
-			"defaultValue": "https://raw.githubusercontent.com/vpatelsj/AzureStack-QuickStart-Templates/master/101-vm-linux-minikube/"
+			"defaultValue": "https://raw.githubusercontent.com/vpatelsj/AzureStack-QuickStart-Templates/master/101-vm-linux-build-hyperkube/"
 
 		},
 		"imagePublisher": {
@@ -90,7 +91,6 @@
 		},
 		"hyperkubeVersion": {
 		  "type": "string",
-		  "defaultValue": "1.0",
 		  "metadata": {
 			"description": "hyperkube version"
 		  }
@@ -115,7 +115,7 @@
         "vnetId": "[resourceId(resourceGroup().Name,'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
 		"scriptName": "script",
-		"scriptParameters": "[concat(parameters('dockerLink'),' ',parameters('repoLink'),' ',parameters('repoBranch'),' ',parameters('dockerhubUsername'),' ',parameters('dockerhubPassword'),' ',parameters('dockerhubPassword'),' ',parameters('hyperkubeVersion'))]"
+		"scriptParameters": "[concat(parameters('dockerLink'),' ',parameters('repoLink'),' ',parameters('repoBranch'),' ',parameters('dockerhubUsername'),' ',parameters('dockerhubPassword'),' ',parameters('dockerhubReponame'),' ',parameters('hyperkubeVersion'))]"
     },
     "resources": [
         {
